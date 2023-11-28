@@ -31,6 +31,9 @@ Made possible by [gpt-crawler](https://github.com/BuilderIO/gpt-crawler) ğŸ™ğŸ
 
 # generate combined.json
 deno task combine
+
+# combine all datasets
+deno task combine --all
 ```
 
 

@@ -37,18 +37,20 @@ async function combineJsonFiles(directory: string, selectedFiles: string[]) {
   return combinedData;
 }
 
-
 // Get a list of available files (excluding combined.json and .deno files)
-const availableFiles = getAvailableFiles(currentDirectory).filter(file => file !== combinedFileName.replace(".json", ""));
+const availableFiles = getAvailableFiles(currentDirectory).filter((file) =>
+  file !== combinedFileName.replace(".json", "")
+);
 
 // Parse command-line arguments
-const { all, files = [], help } = parse(Deno.args);
+const { all, help } = parse(Deno.args);
 
 if (help) {
-  console.log("Usage: deno run --allow-read --allow-write your_script.ts [OPTIONS]");
+  console.log(
+    "Usage: deno run --allow-read --allow-write your_script.ts [OPTIONS]",
+  );
   console.log("Options:");
   console.log("  --all            Combine all available files (default: No)");
-  console.log("  --files <list>   Specify a space-separated list of files to combine");
   Deno.exit(0);
 }
 
@@ -57,11 +59,11 @@ let selectedFiles: string[] | undefined;
 
 if (all) {
   selectedFiles = availableFiles;
-} else if (files.length === 0) {
-  const answer = await promptToCombineAll();
-  selectedFiles = answer ? availableFiles : await promptToSelectFiles(availableFiles);
 } else {
-  selectedFiles = all ? availableFiles : files;
+  const answer = await promptToCombineAll();
+  selectedFiles = answer
+    ? availableFiles
+    : await promptToSelectFiles(availableFiles);
 }
 
 if (!selectedFiles || !selectedFiles.length) {
@@ -69,9 +71,15 @@ if (!selectedFiles || !selectedFiles.length) {
   Deno.exit(1);
 }
 
-const combinedJsonData = await combineJsonFiles(currentDirectory, selectedFiles);
+const combinedJsonData = await combineJsonFiles(
+  currentDirectory,
+  selectedFiles,
+);
 
-await Deno.writeTextFile(combinedFileName, JSON.stringify(combinedJsonData, null, 2));
+await Deno.writeTextFile(
+  combinedFileName,
+  JSON.stringify(combinedJsonData, null, 2),
+);
 
 console.log(yellow(`\n✨ Datasets combined to ${combinedFileName}`));
 
@@ -94,7 +102,7 @@ function getAvailableFiles(directory: string): string[] {
 // Function to prompt the user if they want to combine all files
 async function promptToCombineAll(): Promise<boolean> {
   const response = await getUserInput("Combine all available files? (Y/n): ");
-  
+
   if (response.toLowerCase() === "y") {
     return true;
   } else if (response.toLowerCase() === "n") {
@@ -106,7 +114,9 @@ async function promptToCombineAll(): Promise<boolean> {
 }
 
 // Function to prompt the user to select files to include
-async function promptToSelectFiles(availableFiles: string[]): Promise<string[]> {
+async function promptToSelectFiles(
+  availableFiles: string[],
+): Promise<string[]> {
   console.log("Available files to include (in alphabetical order):\n");
 
   for (let i = 0; i < availableFiles.length; i++) {
@@ -114,23 +124,26 @@ async function promptToSelectFiles(availableFiles: string[]): Promise<string[]> 
     console.log(`${formattedIndex}${availableFiles[i]}`);
   }
 
-  const selectedFilesInput = await getUserInput("\nSelect files by entering their numbers (space-separated): ");
+  const selectedFilesInput = await getUserInput(
+    "\nSelect files by entering their numbers (space-separated): ",
+  );
   const selectedFileNumbers = selectedFilesInput
     .split(" ")
     .map((str) => parseInt(str) - 1)
     .filter((index) => index >= 0 && index < availableFiles.length);
 
-  const selectedFiles = selectedFileNumbers.map((index) => availableFiles[index]).filter(Boolean);
+  const selectedFiles = selectedFileNumbers.map((index) =>
+    availableFiles[index]
+  ).filter(Boolean);
 
   return selectedFiles;
 }
-
 
 // Function to get user input
 async function getUserInput(prompt: string): Promise<string> {
   const buf = new Uint8Array(1024);
   await Deno.stdout.write(new TextEncoder().encode(prompt));
-  const n = <number>await Deno.stdin.read(buf);
+  const n = <number> await Deno.stdin.read(buf);
   const input = new TextDecoder().decode(buf.subarray(0, n)).trim();
 
   if (input === "") {
