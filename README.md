@@ -8,7 +8,7 @@ Made possible by [gpt-crawler](https://github.com/BuilderIO/gpt-crawler) üôèüè
 ### Available Datasets
 *sorted alphabetically*
 
-| Docs                                           | Dataset                                   |
+| Docs                                           | Dataset                                        |
 | ---------------------------------------------- | ---------------------------------------------- |
 | [h3](https://www.jsdocs.io/package/h3)         | [h3.json](./h3.json)                           |
 | [JavaScript.info](https://javascript.info)     | [javascript-info.json](./javascript-info.json) |
@@ -16,6 +16,7 @@ Made possible by [gpt-crawler](https://github.com/BuilderIO/gpt-crawler) üôèüè
 | [Nuxt Image](https://image.nuxt.com)           | [nuxt-image.json](./nuxt-image.json)           |
 | [Nuxt](https://nuxt.com)                       | [nuxt.json](./nuxt.json)                       |
 | [ofetch](https://www.jsdocs.io/package/ofetch) | [ofetch.json](./ofetch.json)                   |
+| [react](https://react.dev)                     | [react.json](./react.json)                     |
 | [TypeScript](https://www.typescriptlang.org)   | [typescript.json](./typescript.json)           |
 | [UnJS](https://unjs.io)                        | [unjs.json](./unjs.json)                       |
 | [Vue](https://vuejs.org)                       | [vue.json](./vue.json)                         |
@@ -67,6 +68,20 @@ Made possible by [gpt-crawler](https://github.com/BuilderIO/gpt-crawler) üôèüè
     "maxPagesToCrawl": 500,
     "outputFileName": "ofetch.json"
   },
+  {
+    "url": "https://react.dev/reference/react",
+    "match": "https://react.dev/reference/**",
+    "selector": ".break-words.font-normal .ps-0",
+    "maxPagesToCrawl": 500,
+    "outputFileName": "react-reference.json",
+  },
+  {
+    "url": "https://react.dev/learn",
+    "match": "https://react.dev/learn/**",
+    "selector": ".break-words.font-normal .ps-0",
+    "maxPagesToCrawl": 500,
+    "outputFileName": "react-learn.json",
+  }
   {
     "url": "https://www.typescriptlang.org/docs/handbook/typescript-from-scratch.html",
     "match": "https://www.typescriptlang.org/docs/handbook/**",
