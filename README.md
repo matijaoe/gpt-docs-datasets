@@ -1,43 +1,25 @@
-# Docs datasets
+# GPT Docs datasets
 
 Leverage these datasets to build your custom GPT 🤖 
 
-
 Made possible by [gpt-crawler](https://github.com/BuilderIO/gpt-crawler) 🙏🏻
 
-## Available Datasets
+
+### Available Datasets
 *sorted alphabetically*
 
-### [h3](https://www.jsdocs.io/package/h3)
-> [dataset](./h3.json)
-
-### [JavaScript.info](https://javascript.info)
-> [dataset](./javascript-info.json)
-
-### [Nitro](https://nitro.unjs.io)
-> [dataset](./nitro.json)
-
-### [Nuxt Image](https://image.nuxt.com)
-> [dataset](./nuxt-image.json)
-
-### [Nuxt](https://nuxt.com)
-> [dataset](./nuxt.json)
-
-### [ofetch](https://www.jsdocs.io/package/ofetch)
-> [dataset](./ofetch.json)
-
-### [TypeScript](https://www.typescriptlang.org)
-> [dataset](./typescript.json)
-
-### [UnJS](https://unjs.io)
-> [dataset](./unjs.json)
-
-### [Vue](https://vuejs.org)
-> [dataset](./vue.json)
-
-### [VueUse](https://vueuse.org)
-> [dataset](./vueuse.json)
-
+| Docs                                           | Dataset                                   |
+| ---------------------------------------------- | ---------------------------------------------- |
+| [h3](https://www.jsdocs.io/package/h3)         | [h3.json](./h3.json)                           |
+| [JavaScript.info](https://javascript.info)     | [javascript-info.json](./javascript-info.json) |
+| [Nitro](https://nitro.unjs.io)                 | [nitro.json](./nitro.json)                     |
+| [Nuxt Image](https://image.nuxt.com)           | [nuxt-image.json](./nuxt-image.json)           |
+| [Nuxt](https://nuxt.com)                       | [nuxt.json](./nuxt.json)                       |
+| [ofetch](https://www.jsdocs.io/package/ofetch) | [ofetch.json](./ofetch.json)                   |
+| [TypeScript](https://www.typescriptlang.org)   | [typescript.json](./typescript.json)           |
+| [UnJS](https://unjs.io)                        | [unjs.json](./unjs.json)                       |
+| [Vue](https://vuejs.org)                       | [vue.json](./vue.json)                         |
+| [VueUse](https://vueuse.org)                   | [vueuse.json](./vueuse.json)                   |
 
 
 ## Config used 
