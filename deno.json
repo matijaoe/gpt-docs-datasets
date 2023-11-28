@@ -1,5 +1,5 @@
 {
   "tasks": {
-    "build": "deno run --unstable --allow-read --allow-write app.ts"
+    "combine": "deno run --unstable --allow-read --allow-write app.ts"
   }
 }

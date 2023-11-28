@@ -8,19 +8,19 @@ Made possible by [gpt-crawler](https://github.com/BuilderIO/gpt-crawler) üôèüè
 ### Available Datasets
 *sorted alphabetically*
 
-| Docs                                           | Dataset                                        |
-| ---------------------------------------------- | ---------------------------------------------- |
-| [h3](https://www.jsdocs.io/package/h3)         | [h3.json](./h3.json)                           |
-| [JavaScript.info](https://javascript.info)     | [javascript-info.json](./javascript-info.json) |
-| [Nitro](https://nitro.unjs.io)                 | [nitro.json](./nitro.json)                     |
-| [Nuxt Image](https://image.nuxt.com)           | [nuxt-image.json](./nuxt-image.json)           |
-| [Nuxt](https://nuxt.com)                       | [nuxt.json](./nuxt.json)                       |
-| [ofetch](https://www.jsdocs.io/package/ofetch) | [ofetch.json](./ofetch.json)                   |
-| [react](https://react.dev)                     | [react.json](./react.json)                     |
-| [TypeScript](https://www.typescriptlang.org)   | [typescript.json](./typescript.json)           |
-| [UnJS](https://unjs.io)                        | [unjs.json](./unjs.json)                       |
-| [Vue](https://vuejs.org)                       | [vue.json](./vue.json)                         |
-| [VueUse](https://vueuse.org)                   | [vueuse.json](./vueuse.json)                   |
+| Docs                                           | Dataset                                                 |
+| ---------------------------------------------- | ------------------------------------------------------- |
+| [h3](https://www.jsdocs.io/package/h3)         | [h3.json](./datasets/h3.json)                           |
+| [JavaScript.info](https://javascript.info)     | [javascript-info.json](./datasets/javascript-info.json) |
+| [Nitro](https://nitro.unjs.io)                 | [nitro.json](./datasets/nitro.json)                     |
+| [Nuxt Image](https://image.nuxt.com)           | [nuxt-image.json](./datasets/nuxt-image.json)           |
+| [Nuxt](https://nuxt.com)                       | [nuxt.json](./datasets/nuxt.json)                       |
+| [ofetch](https://www.jsdocs.io/package/ofetch) | [ofetch.json](./datasets/ofetch.json)                   |
+| [react](https://react.dev)                     | [react.json](./datasets/react.json)                     |
+| [TypeScript](https://www.typescriptlang.org)   | [typescript.json](./datasets/typescript.json)           |
+| [UnJS](https://unjs.io)                        | [unjs.json](./datasets/unjs.json)                       |
+| [Vue](https://vuejs.org)                       | [vue.json](./datasets/vue.json)                         |
+| [VueUse](https://vueuse.org)                   | [vueuse.json](./datasets/vueuse.json)                   |
 
 
 ## Combine datasets
@@ -30,7 +30,7 @@ Made possible by [gpt-crawler](https://github.com/BuilderIO/gpt-crawler) üôèüè
 # https://docs.deno.com/runtime/manual
 
 # generate combined.json
-deno task build
+deno task combine
 ```
 
 
