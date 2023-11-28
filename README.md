@@ -23,6 +23,17 @@ Made possible by [gpt-crawler](https://github.com/BuilderIO/gpt-crawler) ğŸ™ğŸ
 | [VueUse](https://vueuse.org)                   | [vueuse.json](./vueuse.json)                   |
 
 
+## Combine datasets
+
+```bash
+# ensure Deno is installed
+# https://docs.deno.com/runtime/manual
+
+# generate combined.json
+deno task build
+```
+
+
 ## Config used 
 ```json
 [
