@@ -1,0 +1,472 @@
+[
+  {
+    "title": "isSymbol",
+    "url": "https://radash-docs.vercel.app/docs/typed/is-symbol",
+    "html": "Pass in a value and get a boolean telling you if the value is a Symbol.\n\nimport { isSymbol } from 'radash'\n\nisSymbol('hello') // => false\nisSymbol(Symbol('hello')) // => true"
+  },
+  {
+    "title": "isString",
+    "url": "https://radash-docs.vercel.app/docs/typed/is-string",
+    "html": "Pass in a value and get a boolean telling you if the value is a string.\n\nimport { isString } from 'radash'\n\nisString('hello') // => true\nisString(['hello']) // => false"
+  },
+  {
+    "title": "isPromise",
+    "url": "https://radash-docs.vercel.app/docs/typed/is-promise",
+    "html": "Pass in a value and get a boolean telling you if the value is a Promise. This function is not “bullet proof” because determining if a value is a Promise in javascript is not “bullet proof”. The standard/recommended method is to use Promise.resolve to essentially cast any value, promise or not, into an awaited value. However, this may do in a pinch.\n\nimport { isPromise } from 'radash'\n\nisPromise('hello') // => false\nisPromise(['hello']) // => false\nisPromise(new Promise(res => res())) // => true"
+  },
+  {
+    "title": "isPrimitive",
+    "url": "https://radash-docs.vercel.app/docs/typed/is-primitive",
+    "html": "Checks if the given value is primitive.\n\nPrimitive Types: number , string , boolean , symbol, bigint, undefined, null\n\nimport { isPrimitive } from 'radash'\n\nisPrimitive(22) // => true\nisPrimitive('hello') // => true\nisPrimitive(['hello']) // => false"
+  },
+  {
+    "title": "isObject",
+    "url": "https://radash-docs.vercel.app/docs/typed/is-object",
+    "html": "Pass in a value and get a boolean telling you if the value is an Object.\n\nimport { isObject } from 'radash'\n\nisObject('hello') // => false\nisObject(['hello']) // => false\nisObject(null) // => false\nisObject({ say: 'hello' }) // => true"
+  },
+  {
+    "title": "isNumber",
+    "url": "https://radash-docs.vercel.app/docs/typed/is-number",
+    "html": "Pass in a value and get a boolean telling you if the value is a number.\n\nimport { isNumber } from 'radash'\n\nisNumber('hello') // => false\nisNumber(['hello']) // => false\nisNumber(12) // => true"
+  },
+  {
+    "title": "isInt",
+    "url": "https://radash-docs.vercel.app/docs/typed/is-int",
+    "html": "Pass in a value and get a boolean telling you if the value is an int.\n\nimport { isInt } from 'radash'\n\nisInt(12) // => true\nisInt(12.233) // => false\nisInt('hello') // => false"
+  },
+  {
+    "title": "isFunction",
+    "url": "https://radash-docs.vercel.app/docs/typed/is-function",
+    "html": "Pass in a value and get a boolean telling you if the value is a function.\n\nimport { isFunction } from 'radash'\n\nisFunction('hello') // => false\nisFunction(['hello']) // => false\nisFunction(() => 'hello') // => true"
+  },
+  {
+    "title": "isFloat",
+    "url": "https://radash-docs.vercel.app/docs/typed/is-float",
+    "html": "Pass in a value and get a boolean telling you if the value is a float.\n\nimport { isFloat } from 'radash'\n\nisFloat(12.233)  // => true\nisFloat(12)      // => false\nisFloat('hello') // => false"
+  },
+  {
+    "title": "isEqual",
+    "url": "https://radash-docs.vercel.app/docs/typed/is-equal",
+    "html": "Given two values, returns true if they are equal.\n\nimport { isEqual } from 'radash'\n\nisEqual(null, null) // => true\nisEqual([], [])     // => true\n\nisEqual('hello', 'world') // => false\nisEqual(22, 'abc')        // => false"
+  },
+  {
+    "title": "isEmpty",
+    "url": "https://radash-docs.vercel.app/docs/typed/is-empty",
+    "html": "Pass in a value and get a boolean telling you if the value is empty.\n\nimport { isEmpty } from 'radash'\n\nisEmpty([]) // => true\nisEmpty('') // => true\n\nisEmpty('hello')   // => false\nisEmpty(['hello']) // => false"
+  },
+  {
+    "title": "isArray",
+    "url": "https://radash-docs.vercel.app/docs/typed/is-array",
+    "html": "Pass in a value and get a boolean telling you if the value is an Array.\n\nimport { isArray } from 'radash'\n\nisArray('hello') // => false\nisArray(['hello']) // => true"
+  },
+  {
+    "title": "trim",
+    "url": "https://radash-docs.vercel.app/docs/string/trim",
+    "html": "Trims all prefix and suffix characters from the given string. Like the builtin trim function but accepts alternate (other than space) characters you would like to trim.\n\nimport { trim } from 'radash'\n\ntrim('  hello ') // => hello\ntrim('__hello__', '_') // => hello\ntrim('/repos/:owner/', '/') // => repos/:owner\n\nTrim also handles more than one character to trim.\n\ntrim('222__hello__111', '12_') // => hello"
+  },
+  {
+    "title": "isDate",
+    "url": "https://radash-docs.vercel.app/docs/typed/is-date",
+    "html": "Determine if a value is a Date. Does not check that the input date is valid, only that it is a Javascript Date type.\n\nimport { isDate } from 'radash'\n\nisDate(new Date()) // => true\nisDate(12)         // => false\nisDate('hello')    // => false"
+  },
+  {
+    "title": "title",
+    "url": "https://radash-docs.vercel.app/docs/string/title",
+    "html": "Formats the given string in title case fashion\n\nimport { title } from 'radash'\n\ntitle('hello world') // => 'Hello World'\ntitle('va_va_boom') // => 'Va Va Boom'\ntitle('root-hook') // => 'Root Hook'\ntitle('queryItems') // => 'Query Items'"
+  },
+  {
+    "title": "template",
+    "url": "https://radash-docs.vercel.app/docs/string/template",
+    "html": "Given a string, an object of data, and a format expression to search for, returns a string with all elements that matched the search replaced with their matching value from the data object.\n\nimport { template } from 'radash'\n\ntemplate('It is {{color}}', { color: 'blue' }) // => It is blue\ntemplate('It is <color>', { color: 'blue' }, /<(.+?)>/g) // => It is blue"
+  },
+  {
+    "title": "snake",
+    "url": "https://radash-docs.vercel.app/docs/string/snake",
+    "html": "Given a string returns it in snake case format.\n\nimport { snake } from 'radash'\n\nsnake('green fish blue fish') // => green_fish_blue_fish\n\nWarning: In v11.0.0 a change was made to fix this function so that it correctly splits numbers from neighbouring letters (hello5 becomes hello_5). You can opt out of this behavior and continue with the legacy style (hello5 becomes hello5) by passing the splitOnNumber options.\n\nsnake('5green fish 2blue fish') // => 5_green_fish_2_blue_fish\n\nsnake('5green fish 2blue fish', {\n    splitOnNumber: false\n}) // => 5green_fish_2blue_fish"
+  },
+  {
+    "title": "pascal",
+    "url": "https://radash-docs.vercel.app/docs/string/pascal",
+    "html": "Formats the given string in pascal case fashion.\n\nimport { pascal } from 'radash'\n\npascal('hello world') // => 'HelloWorld'\npascal('va va boom') // => 'VaVaBoom'"
+  },
+  {
+    "title": "dash",
+    "url": "https://radash-docs.vercel.app/docs/string/dash",
+    "html": "Given a string returns it in dash case format.\n\nimport { dash } from 'radash'\n\ndash('green fish blue fish') // => green-fish-blue-fish"
+  },
+  {
+    "title": "capitalize",
+    "url": "https://radash-docs.vercel.app/docs/string/capitalize",
+    "html": "Given a string returns it with the first letter upper cased and all other letters lower cased.\n\nimport { capitalize } from 'radash'\n\ncapitalize('green fish blue FISH') // => Green fish blue fish"
+  },
+  {
+    "title": "camel",
+    "url": "https://radash-docs.vercel.app/docs/string/camel",
+    "html": "Given a string returns it in camel case format.\n\nimport { camel } from 'radash'\n\ncamel('green fish blue fish') // => greenFishBlueFish"
+  },
+  {
+    "title": "series",
+    "url": "https://radash-docs.vercel.app/docs/series/series",
+    "html": "Sometimes you have an enum or union type, possibly a status, that has inherint order and you need to work with values as though they’re ordered. The series function takes many values and returns an object that let’s you do ordered logic on those values.\n\nimport { series } from 'radash'\n\ntype Weekday = 'monday' | 'tuesday' | 'wednesday' | 'thursday' | 'friday'\n\nconst weekdays = series<Weekday>([\n  'monday',\n  'tuesday',\n  'wednesday',\n  'thursday',\n  'friday'\n])\n\nweekdays.min('tuesday', 'thursday') // => 'tuesday'\nweekdays.max('wednesday', 'monday') // => 'wednesday'\nweekdays.next('wednesday') // => 'thursday'\nweekdays.previous('tuesday') // => 'monday'\nweekdays.first() // => 'monday'\nweekdays.last() // => 'friday'\nweekdays.next('friday') // => null\nweekdays.next('friday', weekdays.first()) // => 'monday'\nweekdays.spin('monday', 3) // => 'thursday'\n​\nComplex Data Types\n\nWhen working with objects you’ll want to provide a second argument to series, a function that converts non-primitive values into an identity that can be checked for equality.\n\nimport { series } from 'radash'\n\ntype Weekday = {\n  day: 'monday' | 'tuesday' | 'wednesday' | 'thursday' | 'friday'\n}\n\nconst weekdays = series<Weekday>(\n  [\n    { day: 'monday' },\n    { day: 'tuesday' },\n    { day: 'wednesday' },\n    { day: 'thursday' },\n    { day: 'friday' }\n  ],\n  w => w.day\n)\n\nweekdays.next({ day: 'wednesday' }) // => { day: 'thursday' }\nweekdays.previous({ day: 'tuesday' }) // => { day: 'monday' }"
+  },
+  {
+    "title": "uid",
+    "url": "https://radash-docs.vercel.app/docs/random/uid",
+    "html": "Generates a unique string with optional special characters.\n\nimport { uid } from 'radash'\n\nuid(7) // => UaOKdlW\nuid(20, '*') // => dyJdbC*NsEgcnGjTHS\n\nNote, this function is optimized for simplicity and usability — not performance or security. If you need to create universally unique or cryptographically random strings use a package specifically for that purpose."
+  },
+  {
+    "title": "shuffle",
+    "url": "https://radash-docs.vercel.app/docs/random/shuffle",
+    "html": "Given an array of items, return a new array with the items in a random order.\n\nimport { shuffle } from 'radash'\n\nconst fish = [\n  {\n    name: 'Marlin',\n    weight: 105,\n    source: 'ocean'\n  },\n  {\n    name: 'Salmon',\n    weight: 22,\n    source: 'river'\n  },\n  {\n    name: 'Salmon',\n    weight: 22,\n    source: 'river'\n  }\n]\n\nshuffle(fish)\n\nNote, this is not a cutting edge performance optimized function. This function is optimized for simplicity and best used as a utility. If performance is a priority for you, use a randomness and/or shuffle library."
+  },
+  {
+    "title": "draw",
+    "url": "https://radash-docs.vercel.app/docs/random/draw",
+    "html": "Draw, as in ‘to draw a card from a deck’, is used to get a random item from an array.\n\nimport { draw } from 'radash'\n\nconst fish = ['marlin', 'bass', 'trout']\n\ndraw(fish) // => a random fish"
+  },
+  {
+    "title": "random",
+    "url": "https://radash-docs.vercel.app/docs/random/random",
+    "html": "Genearate a number within a range. This function is meant for utility use — not cryptographic.\n\nimport { random } from 'radash'\n\nrandom(0, 100) // => a random number between 0 and 100"
+  },
+  {
+    "title": "upperize",
+    "url": "https://radash-docs.vercel.app/docs/object/upperize",
+    "html": "Convert all keys in an object to upper case.\n\nimport { upperize } from 'radash'\n\nconst ra = {\n  Mode: 'god',\n  Power: 'sun'\n}\n\nupperize(ra) // => { MODE, POWER }\n\nThe _.upperize function is a shortcut for _.mapKeys(obj, k => k.toUpperCase())"
+  },
+  {
+    "title": "shake",
+    "url": "https://radash-docs.vercel.app/docs/object/shake",
+    "html": "A bit like _.sift but for objects. By default, it will return a new object with all the undefined attributes removed. You can pass a second function argument to remove any attributes by a custom condition.\n\nimport { shake } from 'radash'\n\nconst ra = {\n  mode: 'god',\n  greek: false,\n  limit: undefined\n}\n\nshake(ra) // => { mode, greek }\nshake(ra, a => !a) // => { mode }"
+  },
+  {
+    "title": "set",
+    "url": "https://radash-docs.vercel.app/docs/object/set",
+    "html": "Opposite of get, dynamically set a nested value into an object using a key path. Does not modify the given initial object.\n\nimport { set } from 'radash'\n\nset({}, 'name', 'ra')\n// => { name: 'ra' }\n\nset({}, 'cards[0].value', 2)\n// => { cards: [{ value: 2 }] }"
+  },
+  {
+    "title": "pick",
+    "url": "https://radash-docs.vercel.app/docs/object/pick",
+    "html": "Given an object and a list of keys in the object, returns a new object with only the given keys.\n\nimport { pick } from 'radash'\n\nconst fish = {\n  name: 'Bass',\n  weight: 8,\n  source: 'lake',\n  barckish: false\n}\n\npick(fish, ['name', 'source']) // => { name, source }"
+  },
+  {
+    "title": "omit",
+    "url": "https://radash-docs.vercel.app/docs/object/omit",
+    "html": "Given an object and a list of keys in the object, returns a new object without any of the given keys.\n\nimport { omit } from 'radash'\n\nconst fish = {\n  name: 'Bass',\n  weight: 8,\n  source: 'lake',\n  brackish: false\n}\n\nomit(fish, ['name', 'source']) // => { weight, brackish }"
+  },
+  {
+    "title": "mapValues",
+    "url": "https://radash-docs.vercel.app/docs/object/map-values",
+    "html": "Given an object and a toValue callback function, returns a new object with all the values mapped through the toValue function. The callback is given both the value and key for each entry.\n\nimport { mapValues } from 'radash'\n\nconst ra = {\n  mode: 'god',\n  power: 'sun'\n}\n\nmapValues(ra, value => value.toUpperCase()) // => { mode: 'GOD', power: 'SUN' }\nmapValues(ra, (value, key) => key) // => { mode: 'mode', power: 'power' }"
+  },
+  {
+    "title": "mapKeys",
+    "url": "https://radash-docs.vercel.app/docs/object/map-keys",
+    "html": "Given an object and a toKey callback function, returns a new object with all the keys mapped through the toKey function. The callback is given both the key and value for each entry.\n\nimport { mapKeys } from 'radash'\n\nconst ra = {\n  mode: 'god',\n  power: 'sun'\n}\n\nmapKeys(ra, key => key.toUpperCase()) // => { MODE, POWER }\nmapKeys(ra, (key, value) => value) // => { god: 'god', power: 'power' }"
+  },
+  {
+    "title": "mapEntries",
+    "url": "https://radash-docs.vercel.app/docs/object/map-entries",
+    "html": "Iterates the entries of an object, calling the given toEntry callback function to generate new entries. It’s a _.mapValues and _.mapKeys in one. The toEntry callback function should return an array with two items [key, value] (a.k.a the new entry).\n\nimport { mapEntries } from 'radash'\n\nconst ra = {\n  name: 'Ra',\n  power: 'sun',\n  rank: 100,\n  culture: 'egypt'\n}\n\nmapEntries(ra, (key, value) => [key.toUpperCase(), `${value}`]) // => { NAME: 'Ra', POWER: 'sun', RANK: '100', CULTURE: 'egypt' }"
+  },
+  {
+    "title": "lowerize",
+    "url": "https://radash-docs.vercel.app/docs/object/lowerize",
+    "html": "Convert all keys in an object to lower case. Useful to standardize attribute key casing. For example, headers.\n\nimport { lowerize } from 'radash'\n\nconst ra = {\n  Mode: 'god',\n  Power: 'sun'\n}\n\nlowerize(ra) // => { mode, power }\n\nThe _.lowerize function is a shortcut for _.mapKeys(obj, k => k.toLowerCase())"
+  },
+  {
+    "title": "listify",
+    "url": "https://radash-docs.vercel.app/docs/object/listify",
+    "html": "Given an object and a mapping function, return an array with an item for each entry in the object.\n\nimport { listify } from 'radash'\n\nconst fish = {\n  marlin: {\n    weight: 105,\n  },\n  bass: {\n    weight: 8,\n  }\n}\n\nlistify(fish, (key, value) => ({ ...value, name: key })) // => [{ name: 'marlin', weight: 105 }, { name: 'bass', weight: 8 }]"
+  },
+  {
+    "title": "keys",
+    "url": "https://radash-docs.vercel.app/docs/object/keys",
+    "html": "Given an object, return all of it’s keys and children’s keys deeply as a flat string list.\n\nimport { keys } from 'radash'\n\nconst ra = {\n  name: 'ra',\n  power: 100,\n  friend: {\n    name: 'loki',\n    power: 80\n  },\n  enemies: [\n    {\n      name: 'hathor',\n      power: 12\n    }\n  ]\n}\n\nkeys(ra)\n// => [\n//   'name',\n//   'power',\n//   'friend.name',\n//   'friend.power',\n//   'enemies.0.name',\n//   'enemies.0.power'\n// ]\n\nThis is a function you might like to use with get, which dynamically looks up values in an object given a string path. Using the two together you could do something like flatten a deep object.\n\nimport { keys, get, objectify } from 'radash'\n\nobjectify(\n  keys(ra),\n  key => key,\n  key => get(ra, key)\n)\n// => {\n//   'name': 'ra'\n//   'power': 100\n//   'friend.name': 'loki'\n//   'friend.power': 80\n//   'enemies.0.name': 'hathor'\n//   'enemies.0.power': 12\n// }\n\nAs of v10.5.0+ you can get this behavior via the crush function"
+  },
+  {
+    "title": "invert",
+    "url": "https://radash-docs.vercel.app/docs/object/invert",
+    "html": "Given an object returns a new object with the keys and values reversed.\n\nimport { invert } from 'radash'\n\nconst powersByGod = {\n  ra: 'sun',\n  loki: 'tricks',\n  zeus: 'lighning'\n}\n\ninvert(gods) // => { sun: ra, tricks: loki, lightning: zeus }"
+  },
+  {
+    "title": "get",
+    "url": "https://radash-docs.vercel.app/docs/object/get",
+    "html": "Given any value and a select function to get the desired attribute, returns the desired value or a default value if the desired value couldn’t be found.\n\nimport { get } from 'radash'\n\nconst fish = {\n  name: 'Bass',\n  weight: 8,\n  sizes: [\n    {\n      maturity: 'adult',\n      range: [7, 18],\n      unit: 'inches'\n    }\n  ]\n}\n\nget( fish, 'sizes[0].range[1]' ) // 18\nget( fish, 'sizes.0.range.1' ) // 18\nget( fish, 'foo', 'default' ) // 'default'"
+  },
+  {
+    "title": "crush",
+    "url": "https://radash-docs.vercel.app/docs/object/crush",
+    "html": "Flattens a deep object to a single dimension. The deep keys will be converted to a dot notation in the new object.\n\nimport { crush } from 'radash'\n\nconst ra = {\n  name: 'ra',\n  power: 100,\n  friend: {\n    name: 'loki',\n    power: 80\n  },\n  enemies: [\n    {\n      name: 'hathor',\n      power: 12\n    }\n  ]\n}\n\ncrush(ra)\n// {\n//   name: 'ra',\n//   power: 100,\n//   'friend.name': 'loki',\n//   'friend.power': 80,\n//   'enemies.0.name': 'hathor',\n//   'enemies.0.power': 12\n// }"
+  },
+  {
+    "title": "construct",
+    "url": "https://radash-docs.vercel.app/docs/object/construct",
+    "html": "The opposite of crush, given an object that was crushed into key paths and values will return the original object reconstructed.\n\nimport { construct } from 'radash'\n\nconst flat = {\n  name: 'ra',\n  power: 100,\n  'friend.name': 'loki',\n  'friend.power': 80,\n  'enemies.0.name': 'hathor',\n  'enemies.0.power': 12\n}\n\nconstruct(flat)\n// {\n//   name: 'ra',\n//   power: 100,\n//   friend: {\n//     name: 'loki',\n//     power: 80\n//   },\n//   enemies: [\n//     {\n//       name: 'hathor',\n//       power: 12\n//     }\n//   ]\n// }"
+  },
+  {
+    "title": "clone",
+    "url": "https://radash-docs.vercel.app/docs/object/clone",
+    "html": "Creates a shallow copy of the given object/value.\n\nimport { clone } from 'radash'\n\nconst ra = {\n  name: 'Ra',\n  power: 100\n}\n\nconst gods = [ra]\n\nclone(ra) // => copy of ra\nclone(gods) // => copy of gods"
+  },
+  {
+    "title": "assign",
+    "url": "https://radash-docs.vercel.app/docs/object/assign",
+    "html": "Merges two objects together recursivly into a new object applying values from right to left. Recursion only applies to child object properties.\n\nimport { assign } from 'radash'\n\nconst ra = {\n  name: 'Ra',\n  power: 100\n}\n\nassign(ra, { name: 'Loki' })\n// => { name: Loki, power: 100 }"
+  },
+  {
+    "title": "toFloat",
+    "url": "https://radash-docs.vercel.app/docs/number/to-float",
+    "html": "The _.toFloat function will do its best to convert the given value to a float.\n\nimport { toFloat } from 'radash'\n\ntoFloat(0) // => 0.0\ntoFloat(null) // => 0.0\ntoFloat(null, 3.33) // => 3.33"
+  },
+  {
+    "title": "toInt",
+    "url": "https://radash-docs.vercel.app/docs/number/to-int",
+    "html": "The _.toInt function will do its best to convert the given value to an int.\n\nimport { toInt } from 'radash'\n\ntoInt(0) // => 0\ntoInt(null) // => 0\ntoInt(null, 3) // => 3"
+  },
+  {
+    "title": "throttle",
+    "url": "https://radash-docs.vercel.app/docs/curry/throttle",
+    "html": "Throttle accepts an options object with an interval and a source function to call when invoked. When the returned function is invoked it will only call the source function if the interval milliseconds of time has passed. Otherwise, it will ignore the invocation.\n\nimport { throttle } from 'radash'\n\nconst onMouseMove = () => {\n  rerender()\n}\n\naddEventListener('mousemove', throttle({ interval: 200 }, onMouseMove))\n​\nTiming\n\nA visual of the throttle behavior when interval is 200. The throttle function returned by throttle can be called every millisecond but it will only call the given callback after interval milliseconds have passed.\n\n                Time: 0ms - - - - 100ms - - - - 200ms - - - - 300ms - - - - 400ms - - - -\nThrottle Invocations: x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x - - -\n  Source Invocations: x - - - - - - - - - - - - x - - - - - - - - - - - - - x - - - - - -\n​\nisThrottled\n\nThe function returned by throttle has a isThrottled method that when called will return if there is any active throttle.\n\nconst debounced = throttle({ interval: 200 }, onMouseMove)\n\n// ... sometime later\n\ndebounced.isThrottled()"
+  },
+  {
+    "title": "proxied",
+    "url": "https://radash-docs.vercel.app/docs/curry/proxied",
+    "html": "Javascript’s Proxy object is powerful but a bit awkward to use. The _.proxied function creates the Proxy for you and handles calling back to your handler when functions on the Proxy are called or properties are accessed.\n\nimport { proxied } from 'radash'\n\ntype Property = 'name' | 'size' | 'getLocation'\n\nconst person = proxied((prop: Property) => {\n  switch (prop) {\n    case 'name':\n      return 'Joe'\n    case 'size':\n      return 20\n    case 'getLocation'\n      return () => 'here'\n  }\n})\n\nperson.name // => Joe\nperson.size // => 20\nperson.getLocation() // => here"
+  },
+  {
+    "title": "partial",
+    "url": "https://radash-docs.vercel.app/docs/curry/partial",
+    "html": "Create a partial function by providing some — or all — of the arguments the given function needs.\n\nimport { partial } from 'radash'\n\nconst add = (a: number, b: number) => a + b\n\nconst addFive = partial(add, 5)\n\naddFive(2) // => 7"
+  },
+  {
+    "title": "partob",
+    "url": "https://radash-docs.vercel.app/docs/curry/partob",
+    "html": "Modern javascript destructuring means a lot of developers, libraries, and frameworks are all opting for unary functions that take a single object that contains the arguments. The _.partob function let’s you partob these unary functions.\n\nimport { partob } from 'radash'\n\nconst add = (props: { a: number; b: number }) => props.a + props.b\n\nconst addFive = partob(add, { a: 5 })\n\naddFive({ b: 2 }) // => 7"
+  },
+  {
+    "title": "memo",
+    "url": "https://radash-docs.vercel.app/docs/curry/memo",
+    "html": "Wrap a function with memo to get a function back that automagically returns values that have already been calculated.\n\nimport { memo } from 'radash'\n\nconst timestamp = memo(() => Date.now())\n\nconst now = timestamp()\nconst later = timestamp()\n\nnow === later // => true\n​\nExpiration\n\nYou can optionally pass a ttl (time to live) that will expire memoized results. In versions prior to version 10, ttl had a value of 300 milliseconds if not specified.\n\nimport { memo, sleep } from 'radash'\n\nconst timestamp = memo(() => Date.now(), {\n  ttl: 1000 // milliseconds\n})\n\nconst now = timestamp()\nconst later = timestamp()\n\nawait sleep(2000)\n\nconst muchLater = timestamp()\n\nnow === later // => true\nnow === muchLater // => false\n​\nKey Function\n\nYou can optionally customize how values are stored when memoized.\n\nconst timestamp = memo(({ group }: { group: string }) => {\n  const ts = Date.now()\n  return `${ts}::${group}`\n}, {\n  key: ({ group }: { group: string }) => group\n})\n\nconst now = timestamp({ group: 'alpha' })\nconst later = timestamp({ group: 'alpha' })\nconst beta = timestamp({ group: 'beta' })\n\nnow === later // => true\nbeta === now // => false"
+  },
+  {
+    "title": "debounce",
+    "url": "https://radash-docs.vercel.app/docs/curry/debounce",
+    "html": "Debounce accepts an options object with a delay and a source function to call when invoked. When the returned function is invoked it will only call the source function after the delay milliseconds of time has passed. Calls that don’t result in invoking the source reset the delay, pushing off the next invocation.\n\nimport { debounce } from 'radash'\n\nconst makeSearchRequest = (event) => {\n  api.movies.search(event.target.value)\n}\n\ninput.addEventListener('change', debounce({ delay: 100 }, makeSearchRequest))\n​\nTiming\n\nA visual of the debounce behavior when delay is 100. The debounce function returned by debounce can be called every millisecond but it will only call the given callback after delay milliseconds have passed.\n\n                Time: 0ms - - - - 100ms - - - - 200ms - - - - 300ms - - - - 400ms - - - -\ndebounce Invocations: x x x x - - - - - - - - x x x x x x x x x x - - - - - - - - - - - -\n  Source Invocations: - - - - - - - - - - x - - - - - - - - - - - - - - - - - x - - - - -\n​\nCancel\n\nThe function returned by debounce has a cancel method that when called will permanently stop the source function from being debounced.\n\nconst debounced = debounce({ delay: 100 }, api.feed.refresh)\n\n// ... sometime later\n\ndebounced.cancel()\n​\nFlush\n\nThe function returned by debounce has a flush method that when called will directly invoke the source function.\n\nconst debounced = debounce({ delay: 100 }, api.feed.refresh)\n\n// ... sometime later\n\ndebounced.flush(event)\n​\nisPending\n\nThe function returned by debounce has a isPending method that when called will return if there is any pending invocation the source function.\n\nconst debounced = debounce({ delay: 100 }, api.feed.refresh)\n\n// ... sometime later\n\ndebounced.isPending()"
+  },
+  {
+    "title": "compose",
+    "url": "https://radash-docs.vercel.app/docs/curry/compose",
+    "html": "In a composition of functions, each function is given the next function as an argument and must call it to continue executing.\n\nimport { compose } from 'radash'\n\nconst useZero = (fn: any) => () => fn(0)\nconst objectize = (fn: any) => (num: any) => fn({ num })\nconst increment = (fn: any) => ({ num }: any) => fn({ num: num + 1 })\nconst returnArg = (arg: any) => (args: any) => args[arg]\n\nconst composed = compose(\n  useZero,\n  objectize,\n  increment,\n  increment,\n  returnArg('num')\n)\n\ncomposed() // => 2\n\nThis can be a little jarring if you haven’t seen it before. Here’s a broken down composition. It’s equivelent to the code above.\n\nconst decomposed = (\n  useZero(\n    objectize(\n      increment(\n        increment(\n          returnArg('num')))))\n)\n\ndecomposed() // => 2"
+  },
+  {
+    "title": "chain",
+    "url": "https://radash-docs.vercel.app/docs/curry/chain",
+    "html": "Chaining functions will cause them to execute one after another, passing the output from each function as the input to the next, returning the final output at the end of the chain.\n\nimport { chain } from 'radash'\n\nconst genesis = () => 0\nconst addFive = (num: number) => num + 5\nconst twoX = (num: number) => num * 2\n\nconst chained = chain(genesis, addFive, twoX)\n\nchained() // => 10"
+  },
+  {
+    "title": "tryit",
+    "url": "https://radash-docs.vercel.app/docs/async/tryit",
+    "html": "Error-first callbacks were cool. Using mutable variables to hoist state when doing try/catch was not cool.\n\nThe tryit function let’s you wrap a function to convert it to an error-first function. Works for both async and sync functions.\n\nimport { tryit } from 'radash'\n\nconst [err, user] = await tryit(api.users.find)(userId)\n​\nCurrying\n\nYou can curry tryit if you like.\n\nimport { tryit } from 'radash'\n\nconst findUser = tryit(api.users.find)\n\nconst [err, user] = await findUser(userId)"
+  },
+  {
+    "title": "sleep",
+    "url": "https://radash-docs.vercel.app/docs/async/sleep",
+    "html": "The _.sleep function allows you to delay in milliseconds.\n\nimport { sleep } from 'radash'\n\nawait sleep(2000) // => waits 2 seconds"
+  },
+  {
+    "title": "retry",
+    "url": "https://radash-docs.vercel.app/docs/async/retry",
+    "html": "The _.retry function allows you to run an async function and automagically retry it if it fails. Given the async func to run, an optional max number of retries (r), and an optional milliseconds to delay between retries (d), the given async function will be called, retrying r many times, and waiting d milliseconds between retries.\n\nThe times option defaults to 3. The delay option (defaults to null) can specify milliseconds to sleep between attempts.\n\nThe backoff option is like delay but uses a function to sleep — makes for easy exponential backoff.\n\nimport { retry } from 'radash'\n\nawait retry({}, api.users.list)\nawait retry({ times: 10 }, api.users.list)\nawait retry({ times: 2, delay: 1000 }, api.users.list)\n\n// exponential backoff\nawait retry({ backoff: i => 10**i }, api.users.list)"
+  },
+  {
+    "title": "reduce",
+    "url": "https://radash-docs.vercel.app/docs/async/reduce",
+    "html": "A reduce that handles callback functions that return a promise.\n\nimport { reduce } from 'radash'\n\nconst userIds = [1, 2, 3, 4]\n\nconst users = await reduce(userIds, async (acc, userId) => {\n  const user = await api.users.find(userId)\n  return {\n    ...acc,\n    [userId]: user\n  }\n}, {})"
+  },
+  {
+    "title": "parallel",
+    "url": "https://radash-docs.vercel.app/docs/async/parallel",
+    "html": "Like _.map but built specifically to run the async callback functions in parallel. The first argument is a limit of how many functions should be allowed to run at once. Returns an array of results.\n\nimport { parallel } from 'radash'\n\nconst userIds = [1, 2, 3, 4, 5, 6, 7, 8, 9]\n\n// Will run the find user async function 3 at a time\n// starting another request when one of the 3 is freed\nconst users = await parallel(3, userIds, async (userId) => {\n  return await api.users.find(userId)\n})\n​\nErrors\n\nWhen all work is complete parallel will check for errors. If any occurred they will all be thrown in a single AggregateError that has an errors property that is all the errors that were thrown.\n\nimport { parallel, try as tryit } from 'radash'\n\nconst userIds = [1, 2, 3]\n\nconst [err, users] = await tryit(parallel)(3, userIds, async (userId) => {\n  throw new Error(`No, I don\\'t want to find user ${userId}`)\n})\n\nconsole.log(err) // => AggregateError\nconsole.log(err.errors) // => [Error, Error, Error]\nconsole.log(err.errors[1].message) // => No, I don't want to find user 2"
+  },
+  {
+    "title": "map",
+    "url": "https://radash-docs.vercel.app/docs/async/map",
+    "html": "A map that handles callback functions that return a promise.\n\nimport { map } from 'radash'\n\nconst userIds = [1, 2, 3, 4]\n\nconst users = await map(userIds, async (userId) => {\n  return await api.users.find(userId)\n})"
+  },
+  {
+    "title": "guard",
+    "url": "https://radash-docs.vercel.app/docs/async/guard",
+    "html": "This lets you set a default value if an async function errors out.\n\nconst users = (await guard(fetchUsers)) ?? []\n\nYou can choose to guard only specific errors too\n\nconst isInvalidUserError = (err: any) => err.code === 'INVALID_ID'\nconst user = (await guard(fetchUser, isInvalidUserError)) ?? DEFAULT_USER"
+  },
+  {
+    "title": "defer",
+    "url": "https://radash-docs.vercel.app/docs/async/defer",
+    "html": "The _.defer functions lets you run an async function, registering functions as you go that should be deferred until the async function completes, and then executed. This is really useful in scripts where failure up to or after a specific point will require some cleanup. It’s a bit like a finally block.\n\nA hat tip to Swift’s defer for the inspiration.\n\nThe function passed to _.defer is called with a single register function argument that can be used to register the work you want to be called when the function completes. If your function throws an error and then a registered cleanup function throws and error it is ignored by default. The register function supports an optional second options argument that lets you configure a rethrow strategy so that error in the cleanup function is rethrown.\n\nimport { defer } from 'radash'\n\nawait defer(async (cleanup) => {\n  const buildDir = await createBuildDir()\n\n  cleanup(() => fs.unlink(buildDir))\n\n  await build()\n})\n\nawait defer(async (register) => {\n  const org = await api.org.create()\n  register(async () => api.org.delete(org.id), { rethrow: true })\n\n  const user = await api.user.create()\n  register(async () => api.users.delete(user.id), { rethrow: true })\n\n  await executeTest(org, user)\n})"
+  },
+  {
+    "title": "all",
+    "url": "https://radash-docs.vercel.app/docs/async/all",
+    "html": "The all function is similar to the builtin Promise.all or Promise.allSettled functions. Given a list (or object) of promises, if any errors are thrown, all errors are gathered and thrown in an AggregateError.\n\n​\nUsing an Array\n\nPassing an array as an argument will return the resolved promise values as an array in the same order.\n\nimport { all } from 'radash'\n\nconst [user] = await all([\n  api.users.create(...),\n  s3.buckets.create(...),\n  slack.customerSuccessChannel.sendMessage(...)\n])\n​\nUsing an Object\n\nPassing an object as an argument will return an object with the same keys and the values as the resolved promise values.\n\nimport { all } from 'radash'\n\nconst { user } = await all({\n  user: api.users.create(...),\n  bucket: s3.buckets.create(...),\n  message: slack.customerSuccessChannel.sendMessage(...)\n})"
+  },
+  {
+    "title": "zip",
+    "url": "https://radash-docs.vercel.app/docs/array/zip",
+    "html": "Creates an array of grouped elements, the first of which contains the first elements of the given arrays, the second of which contains the second elements of the given arrays, and so on.\n\nimport { zip } from 'radash'\n\nconst names = ['ra', 'zeus', 'loki']\nconst cultures = ['egypt', 'greek', 'norse']\n\nzip(names, cultures)\n// => [\n//   [ra, egypt]\n//   [zeus, greek]\n//   [loki, norse]\n// ]"
+  },
+  {
+    "title": "zipToObject",
+    "url": "https://radash-docs.vercel.app/docs/array/zip-to-object",
+    "html": "Creates an object mapping the keys in the first array to their corresponding values in the second array.\n\nimport { zipToObject } from 'radash'\n\nconst names = ['ra', 'zeus', 'loki']\nconst cultures = ['egypt', 'greek', 'norse']\n\nzipToObject(names, cultures)\n// => { ra: egypt, zeus: greek, loki: norse }\n\nzipToObject(names, (k, i) => k + i)\n// => { ra: ra0, zeus: zeus1, loki: loki2 }\n\nzipToObject(names, null)\n// => { ra: null, zeus: null, loki: null }"
+  },
+  {
+    "title": "unique",
+    "url": "https://radash-docs.vercel.app/docs/array/unique",
+    "html": "Given an array of items — and optionally, a function to determine their identity — return a new array without any duplicates.\n\nimport { unique } from 'radash'\n\nconst fish = [\n  {\n    name: 'Marlin',\n    weight: 105,\n    source: 'ocean'\n  },\n  {\n    name: 'Salmon',\n    weight: 22,\n    source: 'river'\n  },\n  {\n    name: 'Salmon',\n    weight: 22,\n    source: 'river'\n  }\n]\n\nunique( fish, f => f.name )\n// [\n//     { name: 'Marlin', weight: 105, source: 'ocean' },\n//     { name: 'Salmon', weight: 22, source: 'river' }\n// ]"
+  },
+  {
+    "title": "toggle",
+    "url": "https://radash-docs.vercel.app/docs/array/toggle",
+    "html": "If the item matching the condition already exists in the list it will be removed. If it does not it will be added.\n\nimport { toggle } from 'radash'\n\nconst gods = ['ra', 'zeus', 'loki']\n\ntoggle(gods, 'ra')     // => [zeus, loki]\ntoggle(gods, 'vishnu') // => [ra, zeus, loki, vishnu]\n​\ntoggle(list, item, identity)\n\nYou can pass an optional toKey function to determine the identity of non-primitive values. Helpful when working with more complex data types.\n\nimport { toggle } from 'radash'\n\nconst ra = { name: 'Ra' }\nconst zeus = { name: 'Zeus' }\nconst loki = { name: 'Loki' }\nconst vishnu = { name: 'Vishnu' }\n\nconst gods = [ra, zeus, loki]\n\ntoggle(gods, ra, g => g.name)     // => [zeus, loki]\ntoggle(gods, vishnu, g => g.name) // => [ra, zeus, loki, vishnu]\n​\ntoggle(list, item, identity, options)\n\nBy default, toggle will append the item if it does not exist. If you need to prepend the item instead you can override the strategy in the options argument.\n\nimport { toggle } from 'radash'\n\nconst gods = ['ra', 'zeus', 'loki']\n\ntoggle(gods, 'vishnu', g => g, { strategy: 'prepend' }) // => [vishnu, ra, zeus, loki]"
+  },
+  {
+    "title": "sum",
+    "url": "https://radash-docs.vercel.app/docs/array/sum",
+    "html": "Given an array of items, and an optional function to map each item to a number, add up all the items.\n\nimport { sum } from 'radash'\n\nconst fish = [\n  {\n    name: 'Marlin',\n    weight: 100\n  },\n  {\n    name: 'Bass',\n    weight: 10\n  },\n  {\n    name: 'Trout',\n    weight: 15\n  }\n]\n\nsum(fish, f => f.weight) // => 125"
+  },
+  {
+    "title": "sort",
+    "url": "https://radash-docs.vercel.app/docs/array/sort",
+    "html": "Given an array of objects, return a new array sorted by the numerical property specified in the get function. A third, and optional, argument allows you to sort in descending order instead of the default ascending order.\n\nThis function only supports numerical sorting. For alphabetic sorting, see the alphabetical function.\n\nimport { sort } from 'radash'\n\nconst fish = [\n  {\n    name: 'Marlin',\n    weight: 105\n  },\n  {\n    name: 'Bass',\n    weight: 8\n  },\n  {\n    name: 'Trout',\n    weight: 13\n  }\n]\n\nsort(fish, f => f.weight) // => [bass, trout, marlin]\nsort(fish, f => f.weight, true) // => [marlin, trout, bass]"
+  },
+  {
+    "title": "sift",
+    "url": "https://radash-docs.vercel.app/docs/array/sift",
+    "html": "Given a list of items, return a new list with all items that are not falsy.\n\nimport { sift } from 'radash'\n\nconst fish = ['salmon', null, false, NaN, 'sockeye', 'bass']\n\nsift(fish) // => ['salmon', 'sockeye', 'bass']"
+  },
+  {
+    "title": "shift",
+    "url": "https://radash-docs.vercel.app/docs/array/shift",
+    "html": "Given a list of items, return an array that shift right n positions.\n\nimport { shift } from 'radash'\nconst arr = [1, 2, 3, 4, 5, 6, 7, 8, 9]\nshift(arr, 3) // => [7, 8, 9, 1, 2, 3, 4, 5, 6]"
+  },
+  {
+    "title": "select",
+    "url": "https://radash-docs.vercel.app/docs/array/select",
+    "html": "Applies a filter and a map operation at once and in one pass.\n\nimport { select } from 'radash'\n\nconst fish = [\n  {\n    name: 'Marlin',\n    weight: 105,\n    source: 'ocean'\n  },\n  {\n    name: 'Bass',\n    weight: 8,\n    source: 'lake'\n  },\n  {\n    name: 'Trout',\n    weight: 13,\n    source: 'lake'\n  }\n]\n\nselect(\n  fish,\n  f => f.weight,\n  f => f.source === 'lake'\n) // => [8, 13]"
+  },
+  {
+    "title": "replace",
+    "url": "https://radash-docs.vercel.app/docs/array/replace",
+    "html": "Given an array of items, replace the one that matches the given condition function. Only replaces the first match. Always returns a copy of the original array.\n\nimport { replace } from 'radash'\n\nconst fish = [\n  {\n    name: 'Marlin',\n    weight: 105\n  },\n  {\n    name: 'Bass',\n    weight: 8\n  },\n  {\n    name: 'Trout',\n    weight: 13\n  }\n]\n\nconst salmon = {\n  name: 'Salmon',\n  weight: 22\n}\n\n// read: replace fish with salmon where the name is Bass\nreplace(fish, salmon, f => f.name === 'Bass') // => [marlin, salmon, trout]"
+  },
+  {
+    "title": "replaceOrAppend",
+    "url": "https://radash-docs.vercel.app/docs/array/replace-or-append",
+    "html": "Given an array of items, an item and an identity function, returns a new array with the item either replaced at the index of the existing item — if it exists, else it is appended at the end.\n\nimport { replaceOrAppend } from 'radash'\n\nconst fish = [\n  {\n    name: 'Marlin',\n    weight: 105\n  },\n  {\n    name: 'Salmon',\n    weight: 19\n  },\n  {\n    name: 'Trout',\n    weight: 13\n  }\n]\n\nconst salmon = {\n  name: 'Salmon',\n  weight: 22\n}\n\nconst sockeye = {\n  name: 'Sockeye',\n  weight: 8\n}\n\nreplaceOrAppend(fish, salmon, f => f.name === 'Salmon') // => [marlin, salmon (weight:22), trout]\nreplaceOrAppend(fish, sockeye, f => f.name === 'Sockeye') // => [marlin, salmon, trout, sockeye]"
+  },
+  {
+    "title": "range",
+    "url": "https://radash-docs.vercel.app/docs/array/range",
+    "html": "Given a start, end, value, and step size returns a generator that will yield values from start to end by step size. Useful for replacing for (let i = 0) with for of. Range will return a generator that for of will call one at a time, so it’s safe to create large ranges.\n\nThe interface is identical to list.\n\nA hat tip to Python’s range functionality\n\nimport { range } from 'radash'\n\nrange(3)                  // yields 0, 1, 2, 3\nrange(0, 3)               // yields 0, 1, 2, 3\nrange(0, 3, 'y')          // yields y, y, y, y\nrange(0, 3, () => 'y')    // yields y, y, y, y\nrange(0, 3, i => i)       // yields 0, 1, 2, 3\nrange(0, 3, i => `y${i}`) // yields y0, y1, y2, y3\nrange(0, 3, obj)          // yields obj, obj, obj, obj\nrange(0, 6, i => i, 2)    // yields 0, 2, 4, 6\n\nfor (const i of range(0, 200, 10)) {\n  console.log(i) // => 0, 10, 20, 30 ... 190, 200\n}\n\nfor (const i of range(0, 5)) {\n  console.log(i) // => 0, 1, 2, 3, 4, 5\n}\n​\nSignatures\n\nThe range function can do a lot with different arguments.\n\n​\nrange(size)\n\nWhen givin a single argument, it’s treated as the size. Returns a generator that yields values from 0 to size.\n\nrange(3) // yields 0, 1, 2, 3\n​\nrange(start, end)\n\nWhen given two arguments, they’re treated as the start and end. Returns a generator that yields values from start to end\n\nrange(2, 6) // yields 2, 3, 4, 5, 6\n​\nrange(start, end, value)\n\nWhen given a third argument it’s treated as the value to be yielded in the generator. If the value is a function it will be called, with an index argument, to create every value.\n\nrange(2, 4, {})       // yields {}, {}, {}\nrange(2, 4, null)     // yields null, null, null\nrange(2, 4, (i) => i) // yields 2, 3, 4\n​\nrange(start, end, value, step)\n\nWhen given a fourth argument it’s treated as the step size to skip when yielding values from start to end.\n\nrange(2, 4, i => i, 2)      // yields 2, 4\nrange(25, 100, i => i, 25)  // yields 25, 50, 75, 100"
+  },
+  {
+    "title": "objectify",
+    "url": "https://radash-docs.vercel.app/docs/array/objectify",
+    "html": "Given an array of items, create a dictionary with keys and values mapped by given functions. First argument is the array to map. The second argument is the function to determine the key for each item. The third argument is optional and determines the value for each item.\n\nimport { objectify } from 'radash'\n\nconst fish = [\n  {\n    name: 'Marlin',\n    weight: 105\n  },\n  {\n    name: 'Bass',\n    weight: 8\n  },\n  {\n    name: 'Trout',\n    weight: 13\n  }\n]\n\nobjectify(fish, f => f.name) // => { Marlin: [marlin object], Bass: [bass object], ... }\nobjectify(\n  fish,\n  f => f.name,\n  f => f.weight\n) // => { Marlin: 105, Bass: 8, Trout: 13 }"
+  },
+  {
+    "title": "min",
+    "url": "https://radash-docs.vercel.app/docs/array/min",
+    "html": "Given an array of items and a function to get the value of each item, returns the item with the smallest value. Uses _.boil under the hood.\n\nimport { min } from 'radash'\n\nconst fish = [\n  {\n    name: 'Marlin',\n    weight: 105,\n    source: 'ocean'\n  },\n  {\n    name: 'Bass',\n    weight: 8,\n    source: 'lake'\n  },\n  {\n    name: 'Trout',\n    weight: 13,\n    source: 'lake'\n  }\n]\n\nmin(fish, f => f.weight) // => {name: \"Bass\", weight: 8, source: \"lake\"}"
+  },
+  {
+    "title": "merge",
+    "url": "https://radash-docs.vercel.app/docs/array/merge",
+    "html": "Given two arrays of items and an identity function, returns the first list with all items from the second list where there was a match.\n\nimport { merge } from 'radash'\n\nconst gods = [\n  {\n    name: 'Zeus',\n    power: 92\n  },\n  {\n    name: 'Ra',\n    power: 97\n  }\n]\n\nconst newGods = [\n  {\n    name: 'Zeus',\n    power: 100\n  }\n]\n\nmerge(gods, newGods, f => f.name) // => [{name: \"Zeus\" power: 100}, {name: \"Ra\", power: 97}]"
+  },
+  {
+    "title": "max",
+    "url": "https://radash-docs.vercel.app/docs/array/max",
+    "html": "Given an array of items and a function to get the value of each item, returns the item with the largest value. Uses _.boil under the hood.\n\nimport { max } from 'radash'\n\nconst fish = [\n  {\n    name: 'Marlin',\n    weight: 105,\n    source: 'ocean'\n  },\n  {\n    name: 'Bass',\n    weight: 8,\n    source: 'lake'\n  },\n  {\n    name: 'Trout',\n    weight: 13,\n    source: 'lake'\n  }\n]\n\nmax(fish, f => f.weight) // => {name: \"Marlin\", weight: 105, source: \"ocean\"}"
+  },
+  {
+    "title": "list",
+    "url": "https://radash-docs.vercel.app/docs/array/list",
+    "html": "Given a start, end, value, and step size returns a list with values from start to end by step size.\n\nThe interface is identical to range.\n\nA hat tip to Python’s range functionality\n\nimport { list } from 'radash'\n\nlist(3)                  // [0, 1, 2, 3]\nlist(0, 3)               // [0, 1, 2, 3]\nlist(0, 3, 'y')          // [y, y, y, y]\nlist(0, 3, () => 'y')    // [y, y, y, y]\nlist(0, 3, i => i)       // [0, 1, 2, 3]\nlist(0, 3, i => `y${i}`) // [y0, y1, y2, y3]\nlist(0, 3, obj)          // [obj, obj, obj, obj]\nlist(0, 6, i => i, 2)    // [0, 2, 4, 6]\n​\nSignatures\n\nThe list function can do a lot with different arguments.\n\n​\nlist(size)\n\nWhen givin a single argument, it’s treated as the size. Returns a list with values from 0 to size.\n\nlist(3) // [0, 1, 2, 3]\n​\nlist(start, end)\n\nWhen given two arguments, they’re treated as the start and end. Returns a list with values from start to end\n\nlist(2, 6) // [2, 3, 4, 5, 6]\n​\nlist(start, end, value)\n\nWhen given a third argument it’s treated as the value to be used in the list. If the value is a function it will be called, with an index argument, to create every value.\n\nlist(2, 4, {})       // [{}, {}, {}]\nlist(2, 4, null)     // [null, null, null]\nlist(2, 4, (i) => i) // [2, 3, 4]\n​\nlist(start, end, value, step)\n\nWhen given a fourth argument it’s treated as the step size to skip when generating values from start to end.\n\nlist(2, 4, i => i, 2)      // [2, 4]\nlist(25, 100, i => i, 25)  // [25, 50, 75, 100]"
+  },
+  {
+    "title": "last",
+    "url": "https://radash-docs.vercel.app/docs/array/last",
+    "html": "Given an array of items return the last item or a default value if no items exists.\n\nimport { last } from 'radash'\n\nconst fish = ['marlin', 'bass', 'trout']\n\nconst lastFish = last(fish) // => 'trout'\nconst lastItem = last([], 'bass') // => 'bass'"
+  },
+  {
+    "title": "iterate",
+    "url": "https://radash-docs.vercel.app/docs/array/iterate",
+    "html": "A bit like forEach meets reduce. Useful for running a function n number of times to generate a value. The _.iterate function takes a count (the number of times to run the callback), a callback function, and an initial value. The callback is run count many times as a reducer and the accumulated value is then returned.\n\nimport { iterate } from 'radash'\n\nconst value = iterate(\n  4,\n  (acc, idx) => {\n    return acc + idx\n  },\n  0\n) // => 10\n\nNote, this is NOT zero indexed. If you pass a count of 5 you will get an index of 1, 2, 3, 4, 5 in the callback function."
+  },
+  {
+    "title": "intersects",
+    "url": "https://radash-docs.vercel.app/docs/array/intersects",
+    "html": "Given two arrays of items, returns true if any item exists in both arrays.\n\nimport { intersects } from 'radash'\n\nconst oceanFish = ['tuna', 'tarpon']\nconst lakeFish = ['bass', 'trout']\n\nintersects(oceanFish, lakeFish) // => false\n\nconst brackishFish = ['tarpon', 'snook']\n\nintersects(oceanFish, brackishFish) // => true"
+  },
+  {
+    "title": "group",
+    "url": "https://radash-docs.vercel.app/docs/array/group",
+    "html": "Given an array of items, group will build up an object where each key is an array of the items that belong in that group. Generally, this can be useful to categorize an array.\n\nimport { group } from 'radash'\n\nconst fish = [\n  {\n    name: 'Marlin',\n    source: 'ocean'\n  },\n  {\n    name: 'Bass',\n    source: 'lake'\n  },\n  {\n    name: 'Trout',\n    source: 'lake'\n  }\n]\n\nconst fishBySource = group(fish, f => f.source) // => { ocean: [marlin], lake: [bass, trout] }"
+  },
+  {
+    "title": "fork",
+    "url": "https://radash-docs.vercel.app/docs/array/fork",
+    "html": "Given an array of items and a condition, returns two arrays where the first contains all items that passed the condition and the second contains all items that failed the condition.\n\nimport { fork } from 'radash'\n\nconst gods = [\n  {\n    name: 'Ra',\n    power: 100\n  },\n  {\n    name: 'Zeus',\n    power: 98\n  },\n  {\n    name: 'Loki',\n    power: 72\n  },\n  {\n    name: 'Vishnu',\n    power: 100\n  }\n]\n\nconst [finalGods, lesserGods] = fork(gods, f => f.power > 90) // [[ra, vishnu, zues], [loki]]"
+  },
+  {
+    "title": "flat",
+    "url": "https://radash-docs.vercel.app/docs/array/flat",
+    "html": "Given an array that contains many arrays, return a new array where all items from the children are present at the top level.\n\nimport { flat } from 'radash'\n\nconst gods = [['ra', 'loki'], ['zeus']]\n\nflat(gods) // => [ra, loki, zeus]\n\nNote, _.flat is not recursive and will not flatten children of children of children … of children. It will only flatten T[][] an array of arrays."
+  },
+  {
+    "title": "first",
+    "url": "https://radash-docs.vercel.app/docs/array/first",
+    "html": "Given an array of items return the first item or a default value if no items exists.\n\nimport { first } from 'radash'\n\nconst gods = ['ra', 'loki', 'zeus']\n\nfirst(gods) // => 'ra'\nfirst([], 'vishnu') // => 'vishnu'"
+  },
+  {
+    "title": "diff",
+    "url": "https://radash-docs.vercel.app/docs/array/diff",
+    "html": "Given two arrays, returns an array of all items that exist in the first array but do not exist in the second array.\n\nimport { diff } from 'radash'\n\nconst oldWorldGods = ['ra', 'zeus']\nconst newWorldGods = ['vishnu', 'zeus']\n\ndiff(oldWorldGods, newWorldGods) // => ['ra']"
+  },
+  {
+    "title": "counting",
+    "url": "https://radash-docs.vercel.app/docs/array/counting",
+    "html": "Given an array of objects and an identity callback function to determine how each object should be identified. Returns an object where the keys are the id values the callback returned and each value is an integer telling how many times that id occurred.\n\nimport { counting } from 'radash'\n\nconst gods = [\n  {\n    name: 'Ra',\n    culture: 'egypt'\n  },\n  {\n    name: 'Zeus',\n    culture: 'greek'\n  },\n  {\n    name: 'Loki',\n    culture: 'greek'\n  }\n]\n\ncounting(gods, g => g.culture) // => { egypt: 1, greek: 2 }"
+  },
+  {
+    "title": "cluster",
+    "url": "https://radash-docs.vercel.app/docs/array/cluster",
+    "html": "Given an array of items and a desired cluster size (n), returns an array of arrays. Each child array containing n (cluster size) items split as evenly as possible.\n\nimport { cluster } from 'radash'\n\nconst gods = ['Ra', 'Zeus', 'Loki', 'Vishnu', 'Icarus', 'Osiris', 'Thor']\n\ncluster(gods, 3)\n// => [\n//   [ 'Ra', 'Zeus', 'Loki' ],\n//   [ 'Vishnu', 'Icarus', 'Osiris' ],\n//   [ 'Thor' ]\n// ]"
+  },
+  {
+    "title": "boil",
+    "url": "https://radash-docs.vercel.app/docs/array/boil",
+    "html": "Given an array of items return the final item that wins the comparison condition. Useful for more complicated min/max.\n\nimport { boil } from 'radash'\n\nconst gods = [\n  {\n    name: 'Ra',\n    power: 100\n  },\n  {\n    name: 'Zeus',\n    power: 98\n  },\n  {\n    name: 'Loki',\n    power: 72\n  }\n]\n\nboil(gods, (a, b) => (a.power > b.power ? a : b)) \n// => { name: 'Ra', power: 100 }"
+  },
+  {
+    "title": "alphabetical",
+    "url": "https://radash-docs.vercel.app/docs/array/alphabetical",
+    "html": "Given an array of objects and a callback function used to determine the property to use for sorting, return a new array with the objects sorted alphabetically. A third, and optional, argument allows you to sort in descending order instead of the default ascending order.\n\nFor numerical sorting, see the sort function.\n\nimport { alphabetical } from 'radash'\n\nconst gods = [\n  {\n    name: 'Ra',\n    power: 100\n  },\n  {\n    name: 'Zeus',\n    power: 98\n  },\n  {\n    name: 'Loki',\n    power: 72\n  },\n  {\n    name: 'Vishnu',\n    power: 100\n  }\n]\n\nalphabetical(gods, g => g.name) // => [Loki, Ra, Vishnu, Zeus]\nalphabetical(gods, g => g.name, 'desc') // => [Zeus, Vishnu, Ra, Loki]"
+  },
+  {
+    "title": "Installation",
+    "url": "https://radash-docs.vercel.app/docs/installation",
+    "html": "​Node\n​\nNPM\n\nRun\n\nnpm install radash\n\n​\nYarn\n\nRun\n\nyarn add radash\n"
+  },
+  {
+    "title": "Getting Started",
+    "url": "https://radash-docs.vercel.app/docs/getting-started",
+    "html": "​Getting Started\n​\nWelcome to 2020s\n\nRadash is the next library you can’t live without. First and foremost, it’s powerful. With those powerful functions, you get strong types and zero dependencies. If you can step out in a bit of faith and try the functions out, I have no doubt you’ll find yourself falling in love.\n\n​\nFeatured Functions\n\nCome, dip your toe in the water. Here are a few functions we can’t live without anymore. Hopefully, you’ll find them useful as well.\n\n​\ntry\n\nThe _.try function abstracts the logical fork of a try/catch and provides an error first callback reminiscent response.\n\nconst [err, response] = await _.try(api.gods.create)({ name: 'Ra' })\nif (err) {\n  throw new Error('Your god is weak and could not be created')\n}\n​\nrange\n\nThe _.range function returns a generator that can be used for iterating. This means you’ll never have to write a for (let i) loop again — and you shouldn’t.\n\nfor (const i of _.range(0, 4)) {\n  console.log(i) // 0, 1, 2, 3, 4\n}\n\nfor (const i of _.range(10, 20, 2)) {\n  console.log(i) // 10, 12, 14, 16, 18, 20\n}\n​\nselect\n\nThe _.select function takes a mapper and filter function and runs them together for you in a single iteration. No more writing a reduce because you need to map and filter, and you don’t want to implement them separately for performance’s sake.\n\nconst superPoweredGodsFromEgypt = _.select(\n  gods, \n  g => ({ ...g, power: g.power * g.power }), \n  g => g.culture === 'egypt'\n)\n​\ndefer\n\nThe _.defer function lets you register functions to run as cleanup while running an async function. It’s like a try/finally, but you can register the finally block at specific times.\n\nawait _.defer(async (defer) => {\n  await api.builds.updateStatus('in-progress')\n  defer((err) => {\n    api.builds.updateStatus(err ? 'failed' : 'success')\n  })\n\n  fs.mkdir('build')\n  defer(() => {\n    fs.unlink('build')\n  })\n\n  await build()\n})\n​\nobjectify\n\nThe _.objectify function helps you convert a list to an object in one step. Typically, we either do this in two steps or write a reduce.\n\nconst godsByCulture = _.objectify(gods, g => g.name, g => g.culture)\n​\nLove and Hate\n​\nLodash\n\nLodash was incredible. When JavaScript was still maturing, it provided the power to things you couldn’t easily do in the vanilla. That was last decade. In this decade, the needs are different. The goal with Radash is to provide the powerful functions you need, not the ones the runtimes now provide, and to do it with great types and source code that’s easy to read and understand.\n\n​\nSaying No\n\nRadash does not provide _.map or _.filter functions. They were helpful before optional chaining and nullish coalescing. Now, there really isn’t a need.\n\nIn the last ten years, the JavaScript community as a whole, and the Typescript community specifically, has moved closer to some key values: deterministic is good, polymorphic is bad, strong types are everything. A part of Lodash’s charm was that it let you pass different types to a function and get other behavior based on the type. An example is the _.map function, which can take a collection or an object and map over either. Radash doesn’t provide that kind of polymorphic behavior.\n\nSorry, not sorry."
+  },
+  {
+    "title": "Core Concepts",
+    "url": "https://radash-docs.vercel.app/docs/core-concepts",
+    "html": "​Keep it Simple\n​\nReadable\n\nThe Radash source is easy to read and understand. We don’t make you navigate through internal library modules and classes, reading a hundred lines of code, to understand what a function does or how it works.\n\nAs an example, here’s a look at the source for the _.compose function.\n\nexport const compose = (...funcs: Func[]) => {\n  return funcs.reverse().reduce((acc, fn) => fn(acc))\n}\n\nThats it… thats the function.\n\n​\nSemi-Functional\n\nFunctional programming has incredible design patterns that we often pull from. However, we’re not dire hard functional engineers. You don’t have to understand monads to use Radash. Most Radash functions are deterministic and/or pure.\n\n​\nSafe\n​\nTypes\n\nRadash is written in TypeScript and provides full typing out of the box."
+  }
+]
