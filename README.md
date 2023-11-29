@@ -8,24 +8,50 @@ Made possible by [gpt-crawler](https://github.com/BuilderIO/gpt-crawler) 🙏�
 ### Available Datasets
 *sorted alphabetically*
 
-| Docs                                           | Dataset                                                 |
-| ---------------------------------------------- | ------------------------------------------------------- |
-| [h3](https://www.jsdocs.io/package/h3)         | [h3.json](./datasets/h3.json)                           |
-| [JavaScript.info](https://javascript.info)     | [javascript-info.json](./datasets/javascript-info.json) |
-| [Nitro](https://nitro.unjs.io)                 | [nitro.json](./datasets/nitro.json)                     |
-| [Nuxt Image](https://image.nuxt.com)           | [nuxt-image.json](./datasets/nuxt-image.json)           |
-| [Nuxt UI](https://ui.nuxt.com/)                | [nuxt-ui.json](./datasets/nuxt-ui.json)                 |
-| [Nuxt](https://nuxt.com)                       | [nuxt.json](./datasets/nuxt.json)                       |
-| [ofetch](https://www.jsdocs.io/package/ofetch) | [ofetch.json](./datasets/ofetch.json)                   |
-| [react](https://react.dev)                     | [react.json](./datasets/react.json)                     |
-| [TypeScript](https://www.typescriptlang.org)   | [typescript.json](./datasets/typescript.json)           |
-| [UnJS](https://unjs.io)                        | [unjs.json](./datasets/unjs.json)                       |
-| [Vite](https://vitejs.dev/)                    | [vite.json](./datasets/vite.json)                       |
-| [Vue Router](https://router.vuejs.org/)        | [vue-router.json](./datasets/vue-router.json)           |
-| [Vue](https://vuejs.org)                       | [vue.json](./datasets/vue.json)                         |
-| [VueUse](https://vueuse.org)                   | [vueuse.json](./datasets/vueuse.json)                   |
 
-Many more are available, haven't had time to update the readme yet
+| Documentation site                                           | JSON Dataset                                              |
+| ------------------------------------------------------------ | --------------------------------------------------------- |
+| [Astro](https://docs.astro.build)                            | [astro.json](./datasets/astro.json)                       |
+| [Drizzle](https://drizzlejs.com)                             | [drizzle.json](./datasets/drizzle.json)                   |
+| [Formkit](https://formkit.com)                               | [formkit.json](./datasets/formkit.json)                   |
+| [Headless UI](https://headlessui.dev)                        | [headlessui-react.json](./datasets/headlessui-react.json) |
+| [Headless UI](https://headlessui.dev)                        | [headlessui-vue.json](./datasets/headlessui-vue.json)     |
+| [Histoire](https://histoire.netlify.app)                     | [histoire.json](./datasets/histoire.json)                 |
+| [h3](https://www.jsdocs.io/package/h3)                       | [h3.json](./datasets/h3.json)                             |
+| [JavaScript.info](https://javascript.info)                   | [javascript-info.json](./datasets/javascript-info.json)   |
+| [Kysely](https://kyselyjs.com)                               | [kysely.json](./datasets/kysely.json)                     |
+| [Nitro](https://nitro.unjs.io)                               | [nitro.json](./datasets/nitro.json)                       |
+| [Nuxt Content](https://content.nuxtjs.org)                   | [nuxt-content.json](./datasets/nuxt-content.json)         |
+| [Nuxt Image](https://image.nuxt.com)                         | [nuxt-image.json](./datasets/nuxt-image.json)             |
+| [Nuxt UI](https://ui.nuxt.com/)                              | [nuxt-ui.json](./datasets/nuxt-ui.json)                   |
+| [Nuxt](https://nuxt.com)                                     | [nuxt.json](./datasets/nuxt.json)                         |
+| [ofetch](https://www.jsdocs.io/package/ofetch)               | [ofetch.json](./datasets/ofetch.json)                     |
+| [Radash](https://radash.netlify.app)                         | [radash.json](./datasets/radash.json)                     |
+| [React](https://react.dev)                                   | [react.json](./datasets/react.json)                       |
+| [Shadcn Vue](https://shadcn-vue.com)                         | [shadcn.json](./datasets/shadcn-vue.json)                 |
+| [Slidev](https://slidev.dev)                                 | [slider.json](./datasets/slidev.json)                     |
+| [SvelteKit](https://kit.svelte.dev)                          | [sveltekit.json](./datasets/sveltekit.json)               |
+| [Svelte](https://svelte.dev)                                 | [svelte.json](./datasets/svelte-4.json)                   |
+| [TanStack Query • React](https://tanstack.com/query)         | [tanstack.json](./datasets/tanstack-query-react-v5.json)  |
+| [TanStack Query • Svelte](https://tanstack.com/query/svelte) | [tanstack.json](./datasets/tanstack-query-svelte-v5.json) |
+| [TanStack Query • Vue](https://tanstack.com/query/vue)       | [tanstack.json](./datasets/tanstack-query-vue-v5.json)    |
+| [Tailwind CSS](https://tailwindcss.com)                      | [tailwindcss.json](./datasets/tailwindcss.json)           |
+| [TypeScript](https://www.typescriptlang.org)                 | [typescript.json](./datasets/typescript.json)             |
+| [UnJS](https://unjs.io)                                      | [unjs.json](./datasets/unjs.json)                         |
+| [Unstorage](https://unstorage.unjs.io)                       | [unstorage.json](./datasets/unstorage.json)               |
+| [VeeValidate](https://vee-validate.logaretm.com/v4)          | [vee-validate.json](./datasets/vee-validate.json)         |
+| [Vitest](https://vitest.dev)                                 | [vite.json](./datasets/vitest.json)                       |
+| [Vite](https://vitejs.dev/)                                  | [vite.json](./datasets/vite.json)                         |
+| [Vue Macros](https://vue-macros.dev/)                        | [vue-macros.json](./datasets/vue-macros.json)             |
+| [Vue Router](https://router.vuejs.org/)                      | [vue-router.json](./datasets/vue-router.json)             |
+| [VueUse](https://vueuse.org)                                 | [vueuse.json](./datasets/vueuse.json)                     |
+| [Vue](https://vuejs.org)                                     | [vue.json](./datasets/vue.json)                           |
+| [Zod](https://github.com/colinhacks/zod)                     | [zod.json](./datasets/zod.json)                           |  |
+
+
+Configs used to crawl the datasets using gpt-crawler are available in [./config.json](./config.json). Hard to keep track, so some all are listed.
+
+Generated datasets are also somewhat cleaned manually to remove irrelevant or repetitive data.
 
 
 ## Combine datasets
@@ -42,128 +68,4 @@ deno task combine --all
 ```
 
 
-## Config used 
-```jsonc
-[
-  {
-    "url": "https://www.jsdocs.io/package/h3#package-functions",
-    "match": "https://www.jsdocs.io/package/h3/**",
-    "selector": "main",
-    "maxPagesToCrawl": 500,
-    "outputFileName": "h3.json"
-  },
-  {
-    "url": "https://javascript.info/modules-intro",
-    "match": "https://javascript.info/**",
-    "selector": "main .content",
-    "maxPagesToCrawl": 5000,
-    "outputFileName": "javascript-info.json"
-  },
-  {
-    "url": "https://nitro.unjs.io/guide/getting-started",
-    "match": "https://nitro.unjs.io/guide/**",
-    "selector": ".page-body",
-    "maxPagesToCrawl": 500,
-    "outputFileName": "nitro.json"
-  },
-  {
-    "url": "https://image.nuxt.com/get-started/installation",
-    "match": "https://image.nuxt.com/**",
-    "selector": "main > .mx-auto > .flex-col > div:nth-child(2) > .flex-col > div:nth-child(1)",
-    "maxPagesToCrawl": 500,
-    "outputFileName": "nuxt-image.json"
-  },
-  {
-    "url": "https://ui.nuxt.com/getting-started",
-    "match": "https://ui.nuxt.com/**",
-    "selector": "main > .mx-auto > .flex-col > div:nth-child(2) > .flex-col > div:nth-child(1)",
-    "maxPagesToCrawl": 500,
-    "outputFileName": "nuxt-ui.json"
-  },
-  {
-    "url": "https://nuxt.com/docs/getting-started/introduction",
-    "match": "https://nuxt.com/docs/**",
-    "selector": "main > .mx-auto > .flex-col > div:nth-child(2) > .flex-col > div:nth-child(1)",
-    "maxPagesToCrawl": 500,
-    "outputFileName": "nuxt.json"
-  },
-  {
-    "url": "https://www.jsdocs.io/package/ofetch",
-    "match": "https://www.jsdocs.io/package/ofetch/**",
-    "selector": "main",
-    "maxPagesToCrawl": 500,
-    "outputFileName": "ofetch.json"
-  },
-  {
-    "url": "https://react.dev/reference/react",
-    "match": "https://react.dev/reference/**",
-    "selector": ".break-words.font-normal .ps-0",
-    "maxPagesToCrawl": 500,
-    "outputFileName": "react-reference.json",
-  },
-  {
-    "url": "https://react.dev/learn",
-    "match": "https://react.dev/learn/**",
-    "selector": ".break-words.font-normal .ps-0",
-    "maxPagesToCrawl": 500,
-    "outputFileName": "react-learn.json",
-  }
-  {
-    "url": "https://www.typescriptlang.org/docs/handbook/typescript-from-scratch.html",
-    "match": "https://www.typescriptlang.org/docs/handbook/**",
-    "selector": "#handbook-content",
-    "maxPagesToCrawl": 500,
-    "outputFileName": "typescript.json"
-  },
-  {
-    "url": "https://unjs.io/packages",
-    "match": "https://unjs.io/packages/**",
-    "selector": ".document-driven-page",
-    "maxPagesToCrawl": 500,
-    "outputFileName": "unjs.json"
-  },
-  {
-    "url": "https://vitejs.dev/config",
-    "match": "https://vitejs.dev/config/**",
-    "selector": ".vp-doc",
-    "maxPagesToCrawl": 500,
-    "outputFileName": "vite-config.json"
-  },
-  {
-    "url": "https://vitejs.dev/guide/why.html",
-    "match": "https://vitejs.dev/guide/**",
-    "selector": ".vp-doc",
-    "maxPagesToCrawl": 500,
-    "outputFileName": "vite.json"
-  },
-  {
-    "url": "https://vuejs.org/api/application.html#createapp",
-    "match": "https://vuejs.org/api/**",
-    "selector": ".vt-doc",
-    "maxPagesToCrawl": 500,
-    "outputFileName": "vue-api.json"
-  },
-  {
-    "url": "https://vuejs.org/guide/introduction.html",
-    "match": "https://vuejs.org/guide/**",
-    "selector": ".vt-doc",
-    "maxPagesToCrawl": 500,
-    "outputFileName": "vue-guide.json"
-  },
-  {
-    "url": "https://vueuse.org/core/useAsyncState/",
-    "match": "https://vueuse.org/core/**",
-    "selector": "main.main",
-    "maxPagesToCrawl": 500,
-    "outputFileName": "vueuse-core.json"
-  },
-  {
-    "url": "https://vueuse.org/shared/createGlobalState/",
-    "match": "https://vueuse.org/shared/**",
-    "selector": "main.main",
-    "maxPagesToCrawl": 500,
-    "outputFileName": "vueuse-shared.json"
-  }
-  // TODO: add configs: vue-router
-]
-```
+

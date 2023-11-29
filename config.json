@@ -1,0 +1,296 @@
+[
+  {
+    "url": "https://docs.astro.build/en/reference/adapter-reference",
+    "match": "https://docs.astro.build/en/**",
+    "selector": "#article.content",
+    "maxPagesToCrawl": 500,
+    "outputFileName": "astro.json"
+  },
+  {
+    "url": "https://orm.drizzle.team/docs/overview",
+    "match": "https://orm.drizzle.team/docs/**",
+    "selector": ".x-w-full.nx-min-w-0",
+    "maxPagesToCrawl": 500,
+    "outputFileName": "drizzle.json"
+  },
+  {
+    "url": "https://formkit.com/getting-started/what-is-formkit",
+    "match": "https://formkit.com/**",
+    "selector": ".nuxt-content",
+    "maxPagesToCrawl": 500,
+    "outputFileName": "formkit.json"
+  },
+  {
+    "url": "https://www.jsdocs.io/package/h3#package-functions",
+    "match": "https://www.jsdocs.io/package/h3/**",
+    "selector": "main",
+    "maxPagesToCrawl": 500,
+    "outputFileName": "h3.json"
+  },
+  {
+    "url": "https://headlessui.com/vue/menu",
+    "match": "https://headlessui.com/vue/**",
+    "selector": "main > .mx-auto",
+    "maxPagesToCrawl": 500,
+    "outputFileName": "headlessui-vue.json"
+  },
+  {
+    "url": "https://histoire.dev/examples",
+    "match": "https://histoire.dev/examples/**",
+    "selector": ".vp-doc",
+    "maxPagesToCrawl": 500,
+    "outputFileName": "histoire-examples.json"
+  },
+  {
+    "url": "https://histoire.dev/reference/config.html",
+    "match": "https://histoire.dev/reference/**",
+    "selector": ".vp-doc",
+    "maxPagesToCrawl": 500,
+    "outputFileName": "histoire-reference.json"
+  },
+  {
+    "url": "https://histoire.dev/guide/vue3/getting-started.html",
+    "match": "https://histoire.dev/guide/vue3/**",
+    "selector": ".vp-doc",
+    "maxPagesToCrawl": 500,
+    "outputFileName": "histoire-vue.json"
+  },
+  {
+    "url": "https://javascript.info/modules-intro",
+    "match": "https://javascript.info/**",
+    "selector": "main .content",
+    "maxPagesToCrawl": 5000,
+    "outputFileName": "javascript-info.json"
+  },
+  {
+    "url": "https://kysely.dev/docs/intro",
+    "match": "https://kysely.dev/docs/**",
+    "selector": "main > .container > .row div:first-child",
+    "maxPagesToCrawl": 500,
+    "outputFileName": "kysely.json"
+  },
+  {
+    "url": "https://nitro.unjs.io/guide/getting-started",
+    "match": "https://nitro.unjs.io/guide/**",
+    "selector": ".page-body",
+    "maxPagesToCrawl": 500,
+    "outputFileName": "nitro.json"
+  },
+  {
+    "url": "https://content.nuxt.com/get-started/installation",
+    "match": "https://content.nuxt.com/**",
+    "selector": "main > .mx-auto > .flex-col > div:nth-child(2) > .flex-col > div:nth-child(1)",
+    "maxPagesToCrawl": 500,
+    "outputFileName": "nuxt-content.json"
+  },
+  {
+    "url": "https://image.nuxt.com/get-started/installation",
+    "match": "https://image.nuxt.com/**",
+    "selector": "main > .mx-auto > .flex-col > div:nth-child(2) > .flex-col > div:nth-child(1)",
+    "maxPagesToCrawl": 500,
+    "outputFileName": "nuxt-image.json"
+  },
+  {
+    "url": "https://ui.nuxt.com/getting-started",
+    "match": "https://ui.nuxt.com/**",
+    "selector": "main > .mx-auto > .flex-col > div:nth-child(2) > .flex-col > div:nth-child(1)",
+    "maxPagesToCrawl": 500,
+    "outputFileName": "nuxt-ui.json"
+  },
+  {
+    "url": "https://nuxt.com/docs/getting-started/introduction",
+    "match": "https://nuxt.com/docs/**",
+    "selector": "main > .mx-auto > .flex-col > div:nth-child(2) > .flex-col > div:nth-child(1)",
+    "maxPagesToCrawl": 500,
+    "outputFileName": "nuxt.json"
+  },
+  {
+    "url": "https://www.jsdocs.io/package/ofetch",
+    "match": "https://www.jsdocs.io/package/ofetch/**",
+    "selector": "main",
+    "maxPagesToCrawl": 500,
+    "outputFileName": "ofetch.json"
+  },
+  {
+    "url": "https://radash-docs.vercel.app/docs/core-concepts",
+    "match": "https://radash-docs.vercel.app/docs/**",
+    "selector": "#content-wrapper",
+    "maxPagesToCrawl": 500,
+    "outputFileName": "radash.json"
+  },
+  {
+    "url": "https://react.dev/learn",
+    "match": "https://react.dev/learn/**",
+    "selector": ".break-words.font-normal .ps-0",
+    "maxPagesToCrawl": 500,
+    "outputFileName": "react-learn.json"
+  },
+  {
+    "url": "https://tanstack.com/query/latest/docs/react/overview",
+    "match": "https://tanstack.com/query/latest/docs/react/**",
+    "selector": ".min-w-0.min-h-0 > .overflow-auto.w-full",
+    "maxPagesToCrawl": 500,
+    "outputFileName": "react-query.json"
+  },
+  {
+    "url": "https://react.dev/reference/react",
+    "match": "https://react.dev/reference/**",
+    "selector": ".break-words.font-normal .ps-0",
+    "maxPagesToCrawl": 500,
+    "outputFileName": "react-reference.json"
+  },
+  {
+    "url": "https://www.shadcn-vue.com/docs/introduction.html",
+    "match": "https://www.shadcn-vue.com/docs/**",
+    "selector": "main.relative",
+    "maxPagesToCrawl": 500,
+    "outputFileName": "shadnc-vue.json"
+  },
+  {
+    "url": "https://sli.dev/guide",
+    "match": "https://sli.dev/guide/**",
+    "selector": ".container > .content",
+    "maxPagesToCrawl": 500,
+    "outputFileName": "slidev.json"
+  },
+  {
+    "url": "https://svelte.dev/docs/introduction",
+    "match": "https://svelte.dev/docs/**",
+    "selector": ".page.content",
+    "maxPagesToCrawl": 500,
+    "outputFileName": "svelte-4.json"
+  },
+  {
+    "url": "https://tanstack.com/query/latest/docs/svelte/overview",
+    "match": "https://tanstack.com/query/latest/docs/svelte/**",
+    "selector": ".min-w-0.min-h-0 > .overflow-auto.w-full",
+    "maxPagesToCrawl": 500,
+    "outputFileName": "svelte-query.json"
+  },
+  {
+    "url": "https://kit.svelte.dev/docs/introduction",
+    "match": "https://kit.svelte.dev/docs/**",
+    "selector": ".container > .page",
+    "maxPagesToCrawl": 500,
+    "outputFileName": "sveltekit.json"
+  },
+  {
+    "url": "https://www.typescriptlang.org/docs/handbook/typescript-from-scratch.html",
+    "match": "https://www.typescriptlang.org/docs/handbook/**",
+    "selector": "#handbook-content",
+    "maxPagesToCrawl": 500,
+    "outputFileName": "typescript.json"
+  },
+  {
+    "url": "https://unjs.io/packages",
+    "match": "https://unjs.io/packages/**",
+    "selector": ".document-driven-page",
+    "maxPagesToCrawl": 500,
+    "outputFileName": "unjs.json"
+  },
+  {
+    "url": "https://unjs.io/packages",
+    "match": "https://unjs.io/packages/**",
+    "selector": ".document-driven-page",
+    "maxPagesToCrawl": 500,
+    "outputFileName": "unjs.json"
+  },
+  {
+    "url": "https://unstorage.unjs.io/",
+    "match": "https://unstorage.unjs.io/**",
+    "selector": ".page-body > div:first-child",
+    "maxPagesToCrawl": 500,
+    "outputFileName": "unstorage.json"
+  },
+  {
+    "url": "https://vee-validate.logaretm.com/v4/tutorials/basics/",
+    "match": "https://vee-validate.logaretm.com/v4/**",
+    "selector": ".rendered-content",
+    "maxPagesToCrawl": 500,
+    "outputFileName": "vee-validate.json"
+  },
+  {
+    "url": "https://vitejs.dev/config",
+    "match": "https://vitejs.dev/config/**",
+    "selector": ".vp-doc",
+    "maxPagesToCrawl": 500,
+    "outputFileName": "vite-config.json"
+  },
+  {
+    "url": "https://vitejs.dev/guide/why.html",
+    "match": "https://vitejs.dev/guide/**",
+    "selector": ".vp-doc",
+    "maxPagesToCrawl": 500,
+    "outputFileName": "vite.json"
+  },
+  {
+    "url": "https://vitest.dev/advanced/api.html",
+    "match": "https://vitest.dev/advanced/**",
+    "selector": ".vp-doc",
+    "maxPagesToCrawl": 500,
+    "outputFileName": "vitest-advanced.json"
+  },
+  {
+    "url": "https://vitest.dev/guide",
+    "match": "https://vitejs.dev/guide/**",
+    "selector": ".vp-doc",
+    "maxPagesToCrawl": 500,
+    "outputFileName": "vitest-guide.json"
+  },
+  {
+    "url": "https://vuejs.org/api/application.html#createapp",
+    "match": "https://vuejs.org/api/**",
+    "selector": ".vt-doc",
+    "maxPagesToCrawl": 500,
+    "outputFileName": "vue-api.json"
+  },
+  {
+    "url": "https://vuejs.org/guide/introduction.html",
+    "match": "https://vuejs.org/guide/**",
+    "selector": ".vt-doc",
+    "maxPagesToCrawl": 500,
+    "outputFileName": "vue-guide.json"
+  },
+  {
+    "url": "https://vue-macros.dev/guide/getting-started.html",
+    "match": "https://vue-macros.dev/**",
+    "selector": ".vp-doc",
+    "maxPagesToCrawl": 500,
+    "outputFileName": "vue-macros.json"
+  },
+  {
+    "url": "https://tanstack.com/query/latest/docs/vue/overview",
+    "match": "https://tanstack.com/query/latest/docs/vue/**",
+    "selector": ".min-w-0.min-h-0 > .overflow-auto.w-full",
+    "maxPagesToCrawl": 500,
+    "outputFileName": "vue-query.json"
+  },
+  {
+    "url": "https://www.radix-vue.com/overview/introduction.html",
+    "match": "https://www.radix-vue.com/**",
+    "selector": "main.main",
+    "maxPagesToCrawl": 500,
+    "outputFileName": "vue-radix.json"
+  },
+  {
+    "url": "https://vueuse.org/core/useAsyncState/",
+    "match": "https://vueuse.org/core/**",
+    "selector": "main.main",
+    "maxPagesToCrawl": 500,
+    "outputFileName": "vueuse-core.json"
+  },
+  {
+    "url": "https://vueuse.org/shared/createGlobalState/",
+    "match": "https://vueuse.org/shared/**",
+    "selector": "main.main",
+    "maxPagesToCrawl": 500,
+    "outputFileName": "vueuse-shared.json"
+  },
+  {
+    "url": "https://github.com/colinhacks/zod/blob/master/README.md",
+    "match": "hhttps://github.com/colinhacks/zod/blob/master/README.md",
+    "selector": ".markdown-body",
+    "maxPagesToCrawl": 500,
+    "outputFileName": "zod-gh.json"
+  }
+]
