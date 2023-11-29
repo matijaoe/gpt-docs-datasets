@@ -14,11 +14,14 @@ Made possible by [gpt-crawler](https://github.com/BuilderIO/gpt-crawler) ðŸ™ðŸ
 | [JavaScript.info](https://javascript.info)     | [javascript-info.json](./datasets/javascript-info.json) |
 | [Nitro](https://nitro.unjs.io)                 | [nitro.json](./datasets/nitro.json)                     |
 | [Nuxt Image](https://image.nuxt.com)           | [nuxt-image.json](./datasets/nuxt-image.json)           |
+| [Nuxt UI](https://ui.nuxt.com/)                | [nuxt-ui.json](./datasets/nuxt-ui.json)                 |
 | [Nuxt](https://nuxt.com)                       | [nuxt.json](./datasets/nuxt.json)                       |
 | [ofetch](https://www.jsdocs.io/package/ofetch) | [ofetch.json](./datasets/ofetch.json)                   |
 | [react](https://react.dev)                     | [react.json](./datasets/react.json)                     |
 | [TypeScript](https://www.typescriptlang.org)   | [typescript.json](./datasets/typescript.json)           |
 | [UnJS](https://unjs.io)                        | [unjs.json](./datasets/unjs.json)                       |
+| [Vite](https://vitejs.dev/)                    | [vite.json](./datasets/vite.json)                       |
+| [Vue Router](https://router.vuejs.org/)        | [vue-router.json](./datasets/vue-router.json)           |
 | [Vue](https://vuejs.org)                       | [vue.json](./datasets/vue.json)                         |
 | [VueUse](https://vueuse.org)                   | [vueuse.json](./datasets/vueuse.json)                   |
 
@@ -69,6 +72,13 @@ deno task combine --all
     "outputFileName": "nuxt-image.json"
   },
   {
+    "url": "https://ui.nuxt.com/getting-started",
+    "match": "https://ui.nuxt.com/**",
+    "selector": "main > .mx-auto > .flex-col > div:nth-child(2) > .flex-col > div:nth-child(1)",
+    "maxPagesToCrawl": 500,
+    "outputFileName": "nuxt-ui.json"
+  },
+  {
     "url": "https://nuxt.com/docs/getting-started/introduction",
     "match": "https://nuxt.com/docs/**",
     "selector": "main > .mx-auto > .flex-col > div:nth-child(2) > .flex-col > div:nth-child(1)",
@@ -111,6 +121,20 @@ deno task combine --all
     "outputFileName": "unjs.json"
   },
   {
+    "url": "https://vitejs.dev/config",
+    "match": "https://vitejs.dev/config/**",
+    "selector": ".vp-doc",
+    "maxPagesToCrawl": 500,
+    "outputFileName": "vite-config.json"
+  },
+  {
+    "url": "https://vitejs.dev/guide/why.html",
+    "match": "https://vitejs.dev/guide/**",
+    "selector": ".vp-doc",
+    "maxPagesToCrawl": 500,
+    "outputFileName": "vite.json"
+  },
+  {
     "url": "https://vuejs.org/api/application.html#createapp",
     "match": "https://vuejs.org/api/**",
     "selector": ".vt-doc",
@@ -138,5 +162,6 @@ deno task combine --all
     "maxPagesToCrawl": 500,
     "outputFileName": "vueuse-shared.json"
   }
+  // TODO: add configs vue-router
 ]
 ```
