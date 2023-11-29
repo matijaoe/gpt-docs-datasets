@@ -25,12 +25,7 @@ Made possible by [gpt-crawler](https://github.com/BuilderIO/gpt-crawler) ğŸ™ğŸ
 | [Vue](https://vuejs.org)                       | [vue.json](./datasets/vue.json)                         |
 | [VueUse](https://vueuse.org)                   | [vueuse.json](./datasets/vueuse.json)                   |
 
-### TODO
-- [ ] Pinia
-- [ ] date-fns
-- [ ] Tailwind
-- [ ] Vitest
-- [ ] Svelte
+Many more are available, haven't had time to update the readme yet
 
 
 ## Combine datasets
