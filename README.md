@@ -6,16 +6,17 @@ Made possible by [gpt-crawler](https://github.com/BuilderIO/gpt-crawler) 🙏�
 
 
 ### Available Datasets
-*sorted alphabetically*
+
+> _Sorted alphabetically. Mostly focused on the Vue ecosystem_.
 
 
-| Documentation site                                           | JSON Dataset                                              |
+| Documentation site                                           | JSON dataset                                              |
 | ------------------------------------------------------------ | --------------------------------------------------------- |
 | [Astro](https://docs.astro.build)                            | [astro.json](./datasets/astro.json)                       |
 | [Drizzle](https://drizzlejs.com)                             | [drizzle.json](./datasets/drizzle.json)                   |
 | [Formkit](https://formkit.com)                               | [formkit.json](./datasets/formkit.json)                   |
-| [Headless UI](https://headlessui.dev)                        | [headlessui-react.json](./datasets/headlessui-react.json) |
-| [Headless UI](https://headlessui.dev)                        | [headlessui-vue.json](./datasets/headlessui-vue.json)     |
+| [Headless UI • React](https://headlessui.dev)                        | [headlessui-react.json](./datasets/headlessui-react.json) |
+| [Headless UI • Vue](https://headlessui.dev)                        | [headlessui-vue.json](./datasets/headlessui-vue.json)     |
 | [Histoire](https://histoire.netlify.app)                     | [histoire.json](./datasets/histoire.json)                 |
 | [h3](https://www.jsdocs.io/package/h3)                       | [h3.json](./datasets/h3.json)                             |
 | [JavaScript.info](https://javascript.info)                   | [javascript-info.json](./datasets/javascript-info.json)   |
@@ -49,9 +50,11 @@ Made possible by [gpt-crawler](https://github.com/BuilderIO/gpt-crawler) 🙏�
 | [Zod](https://github.com/colinhacks/zod)                     | [zod.json](./datasets/zod.json)                           |  |
 
 
-Configs used to crawl the datasets using gpt-crawler are available in [./config.json](./config.json). Hard to keep track, so some all are listed.
 
-Generated datasets are also somewhat cleaned manually to remove irrelevant or repetitive data.
+> [!NOTE]  
+> Configs used to crawl the documentation sites are available in [config.json](./config.json). Difficult to keep up to date, so not all are listed.
+> 
+> Generated datasets are also somewhat cleaned manually to remove irrelevant or repetitive data.
 
 
 ## Combine datasets
