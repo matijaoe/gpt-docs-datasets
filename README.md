@@ -1,4 +1,4 @@
-# GPT Docs datasets
+# GPT Docs Datasets
 
 Leverage these datasets to build your custom GPT 🤖 
 
@@ -25,6 +25,13 @@ Made possible by [gpt-crawler](https://github.com/BuilderIO/gpt-crawler) 🙏�
 | [Vue](https://vuejs.org)                       | [vue.json](./datasets/vue.json)                         |
 | [VueUse](https://vueuse.org)                   | [vueuse.json](./datasets/vueuse.json)                   |
 
+### TODO
+- [ ] Pinia
+- [ ] date-fns
+- [ ] Tailwind
+- [ ] Vitest
+- [ ] Svelte
+
 
 ## Combine datasets
 
@@ -41,7 +48,7 @@ deno task combine --all
 
 
 ## Config used 
-```json
+```jsonc
 [
   {
     "url": "https://www.jsdocs.io/package/h3#package-functions",
@@ -162,6 +169,6 @@ deno task combine --all
     "maxPagesToCrawl": 500,
     "outputFileName": "vueuse-shared.json"
   }
-  // TODO: add configs vue-router
+  // TODO: add configs: vue-router
 ]
 ```
